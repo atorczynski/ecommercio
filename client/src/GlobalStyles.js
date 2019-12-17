@@ -1,19 +1,21 @@
 import React from 'react';
 import { Global, css } from '@emotion/core';
+import { useTheme } from 'emotion-theming';
 
 function GlobalStyles() {
+  const theme = useTheme();
   return (
     <Global
-      styles={theme => css`
+      styles={css`
         *,
         *:before,
         *:after {
           box-sizing: border-box;
         }
         body {
-          font-size: 16px;
-          margin: 0;
-          background: ${theme.colors.background};
+          font-size: 12px;
+          margin: 0px;
+          background: ${theme.color.background};
           font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
         }
       `}
