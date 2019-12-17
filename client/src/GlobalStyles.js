@@ -13,10 +13,10 @@ function GlobalStyles() {
           box-sizing: border-box;
         }
         body {
-          font-size: 12px;
+          font-size: 14px;
           margin: 0px;
           background: ${theme.color.background};
-          font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+          font-family: 'Roboto', sans-serif;
         }
       `}
     />

@@ -9,9 +9,9 @@ const GlobalButton = styled.button`
   background: #ed462e;
   border: 1px solid #707070;
   box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
-  font-family: Roboto;
   font-weight: normal;
   font-size: 17px;
+  font-family: 'Roboto', sans-serif;
   letter-spacing: 0.05em;
   text-align: center;
   color: #efefef;
