@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled';
+import PropTypes, { string } from 'prop-types';
 
 const AppBar = styled.div`
   height: 75px;
@@ -43,3 +44,7 @@ export default function TopBar(props) {
     </AppBar>
   );
 }
+
+TopBar.propTypes = {
+  merchantName: PropTypes.string.isRequired
+};
