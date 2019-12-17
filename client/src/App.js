@@ -1,7 +1,7 @@
 import React from 'react';
 import { ThemeProvider } from 'emotion-theming';
 import GlobalStyles from './GlobalStyles';
-import light from './components/themes/defaultTheme';
+import light from './themes/defaultTheme';
 
 function App() {
   return (
