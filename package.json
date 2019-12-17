@@ -16,5 +16,17 @@
   "bugs": {
     "url": "https://github.com/atorczynski/ecommercio/issues"
   },
-  "homepage": "https://github.com/atorczynski/ecommercio#readme"
+  "homepage": "https://github.com/atorczynski/ecommercio#readme",
+  "devDependencies": {
+    "@storybook/addon-knobs": "^5.2.8",
+    "@storybook/addon-viewport": "^5.2.8",
+    "eslint": "^6.7.2",
+    "eslint-plugin-react": "^7.17.0",
+    "prettier": "^1.19.1"
+  },
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "mongodb": "^3.4.0"
+  }
 }
