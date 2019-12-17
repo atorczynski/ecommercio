@@ -12,3 +12,6 @@ export function LoginInput() {
 export function LoginButton() {
   return <Button text={'Login'}></Button>;
 }
+export function Register() {
+  return <Button text={'Register'}></Button>;
+}
