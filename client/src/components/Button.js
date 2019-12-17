@@ -6,10 +6,10 @@ const GlobalButton = styled.button`
   width: 108px;
   height: 25px;
   border-radius: 12.5px;
-  background: ${props => props.theme.color.secondary};
+  background: ${props => props.theme.color.buttoncolor};
   box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
   font-weight: normal;
-  font-size: 17px;
+  font-size: 15px;
   font-family: 'Roboto', sans-serif;
   letter-spacing: 0.05em;
   text-align: center;
