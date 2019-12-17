@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled';
+import PropTypes from 'prop-types';
 
 const LoginBox = styled.div`
   display: flex;
@@ -39,3 +40,7 @@ export default function Login(props) {
     </LoginBox>
   );
 }
+
+Login.propTypes = {
+  value: PropTypes.string.isRequired
+};
