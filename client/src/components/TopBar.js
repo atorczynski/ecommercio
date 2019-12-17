@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import PropTypes, { string } from 'prop-types';
+import PropTypes from 'prop-types';
 
 const AppBar = styled.div`
   height: 75px;
