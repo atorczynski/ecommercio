@@ -6,6 +6,8 @@ const GlobalButton = styled.button`
   width: 108px;
   height: 25px;
   border-radius: 12.5px;
+  border: none;
+  outline: none;
   background: ${props => props.theme.color.buttoncolor};
   box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
   font-weight: normal;
