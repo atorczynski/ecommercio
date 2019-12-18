@@ -1,7 +1,6 @@
-import React from 'react';
 import styled from '@emotion/styled';
 
-const GlobalButton = styled.button`
+const Button = styled.button`
   margin-top: 50px;
   width: 108px;
   height: 25px;
@@ -17,7 +16,4 @@ const GlobalButton = styled.button`
   text-align: center;
   color: ${props => props.theme.color.secondary};
 `;
-
-export default function Button(props) {
-  return <GlobalButton onClick={props.onClick}>{props.text}</GlobalButton>;
-}
+export default Button;
