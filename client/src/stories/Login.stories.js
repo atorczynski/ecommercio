@@ -1,6 +1,7 @@
 import React from 'react';
 import Login from '../components/Login';
 import Button from '../components/Button';
+import { action } from '@storybook/addon-actions';
 import { withKnobs, text } from '@storybook/addon-knobs';
 
 export default {
@@ -12,5 +13,5 @@ export function LoginInput() {
   return <Login placeholder={'E-Mail'} passPlaceholder={'Password'}></Login>;
 }
 export function LoginButton() {
-  return <Button text={text('Login', 'Text')}></Button>;
+  return <Button onClick={action('clicked')}>{text('Login', 'Text')}</Button>;
 }
