@@ -15,7 +15,7 @@ const GlobalButton = styled.button`
   font-family: 'Roboto', sans-serif;
   letter-spacing: 0.05em;
   text-align: center;
-  color: #efefef;
+  color: ${props => props.theme.color.secondary};
 `;
 
 export default function Button(props) {
