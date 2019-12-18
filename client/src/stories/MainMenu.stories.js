@@ -1,6 +1,5 @@
 import React from 'react';
 import { action } from '@storybook/addon-actions';
-import MainMenu from '../components/MainMenu';
 import MenuButton from '../components/MenuButton';
 import MainOverview from '../components/MainOverview';
 import { withKnobs, text, number } from '@storybook/addon-knobs';

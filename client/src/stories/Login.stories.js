@@ -4,7 +4,8 @@ import Button from '../components/Button';
 import { withKnobs, text } from '@storybook/addon-knobs';
 
 export default {
-  title: 'Login'
+  title: 'Login',
+  decorators: [withKnobs]
 };
 
 export function LoginInput() {
