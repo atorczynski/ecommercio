@@ -50,7 +50,7 @@ const InfoText = styled.p`
   color: #707070;
 `;
 
-export default function ProductDetails(props) {
+export default function ProductDetail(props) {
   return (
     <ProductDetailWrapper>
       <ImageWrapper>
