@@ -4,10 +4,13 @@ import LoginInput from '../components/LoginInput';
 import RegisterQuestion from '../components/RegisterQuestion';
 
 function LoginPage() {
+  function handleLogin() {
+    console.log('Fired');
+  }
   return (
     <>
       <LogoSvg />
-      <LoginInput passPlaceholder={'Password'} placeholder={'E-Mail'} />
+      <LoginInput onClick={handleLogin} passPlaceholder={'Password'} placeholder={'E-Mail'} />
       <RegisterQuestion />
     </>
   );

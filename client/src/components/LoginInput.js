@@ -45,5 +45,5 @@ export default function Login(props) {
 }
 
 Login.propTypes = {
-  value: PropTypes.string.isRequired
+  value: PropTypes.string
 };

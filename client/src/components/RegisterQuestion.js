@@ -1,6 +1,7 @@
 import React from 'react';
 import Button from '../components/Button';
 import styled from '@emotion/styled';
+import { Link } from 'react-router-dom';
 
 const RegisterWrapper = styled.div`
   display: flex;
@@ -18,7 +19,9 @@ export default function RegisterQuestion() {
   return (
     <RegisterWrapper>
       <Question>Dont have an account yet?</Question>
-      <Button>Register</Button>
+      <Link to="/register">
+        <Button>Register</Button>
+      </Link>
     </RegisterWrapper>
   );
 }
