@@ -1,10 +1,12 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import PropTypes from 'prop-types';
+import Button from './Button';
 
 const LoginBox = styled.div`
   display: flex;
   flex-direction: column;
+  height: 50%;
   align-items: center;
   align-content: center;
 `;
@@ -37,6 +39,7 @@ export default function Login(props) {
         value={props.password}
         placeholder={props.passPlaceholder}
       />
+      <Button onClick={props.onClick}>Login</Button>
     </LoginBox>
   );
 }

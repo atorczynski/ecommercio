@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled';
+import Button from './Button';
 
 const InputWrapper = styled.div`
   display: flex;
