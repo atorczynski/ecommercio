@@ -9,8 +9,13 @@ function App() {
   return (
     <ThemeProvider theme={light}>
       <Router>
-        <LoginPage></LoginPage>
         <GlobalStyles />
+        <Switch>
+          <Route exact path="/">
+            <LoginPage />
+          </Route>
+          
+        </Switch>
       </Router>
     </ThemeProvider>
   );
