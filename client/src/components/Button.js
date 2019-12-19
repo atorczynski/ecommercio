@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 
 const Button = styled.button`
-  margin-top: 50px;
+  margin: 20px;
   width: 108px;
   height: 25px;
   border-radius: 12.5px;
