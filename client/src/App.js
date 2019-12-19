@@ -14,7 +14,6 @@ function App() {
           <Route exact path="/">
             <LoginPage />
           </Route>
-          
         </Switch>
       </Router>
     </ThemeProvider>
