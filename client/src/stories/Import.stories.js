@@ -10,10 +10,8 @@ export default {
 
 export function InputField() {
   return (
-    <Input
-      onChange={action('change')}
-      value={text('Input', 'Value')}
-      placeholder={'http(s)://yourshop.com'}
-    ></Input>
+    <Input onChange={action('change')} placeholder={'http(s)://yourshop.com'}>
+      {text('Input', 'Value')}
+    </Input>
   );
 }
