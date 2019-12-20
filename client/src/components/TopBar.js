@@ -8,6 +8,7 @@ const AppBar = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
 `;
 
 const Greeting = styled.h2`
@@ -29,22 +30,24 @@ const Avatar = styled.div`
 `;
 
 export default function TopBar(props) {
-  function shortName(name) {
-    if (name.length > 17) {
-      return name.substring(0, 15) + '...';
-    } else {
-      return name;
-    }
-  }
+  // function shortName(name) {
+  //   if (name.length > 17) {
+  //     return name.substring(0, 15) + '...';
+  //   } else {
+  //     return name;
+  //   }
+  // }
 
   return (
     <AppBar>
-      <Greeting>Hello {shortName(props.merchantName)}</Greeting>
+      <Greeting>
+        <label htmlFor="Merchant">Hello</label> {'props.merchantName'}
+      </Greeting>
       <Avatar></Avatar>
     </AppBar>
   );
 }
 
 TopBar.propTypes = {
-  merchantName: PropTypes.string.isRequired
+  merchantName: PropTypes.string
 };
