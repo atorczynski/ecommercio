@@ -30,7 +30,7 @@ const Avatar = styled.div`
 `;
 
 export default function TopBar(props) {
-  function shortName(name) {
+  function shortString(name) {
     if (name.length > 17) {
       return name.substring(0, 15) + '...';
     } else {
@@ -41,7 +41,7 @@ export default function TopBar(props) {
   return (
     <AppBar>
       <Greeting>
-        <label htmlFor="Merchant">Hello</label> {shortName('props.merchantName')}
+        <p>{shortString(props.topText)}</p>
       </Greeting>
       <Avatar></Avatar>
     </AppBar>

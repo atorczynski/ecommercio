@@ -26,6 +26,9 @@ const NavButton = styled.button`
   border: none;
   padding: 0;
   outline: inherit;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
 `;
 
 export default function BottomNav(props) {
