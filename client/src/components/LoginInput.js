@@ -2,6 +2,7 @@ import React from 'react';
 import styled from '@emotion/styled';
 import PropTypes from 'prop-types';
 import Button from './Button';
+import { Link } from 'react-router-dom';
 
 const LoginBox = styled.div`
   display: flex;
@@ -39,7 +40,9 @@ export default function Login(props) {
         value={props.password}
         placeholder={props.passPlaceholder}
       />
-      <Button onClick={props.onClick}>Login</Button>
+      <Link to="/main">
+        <Button onClick={props.onClick}>Login</Button>
+      </Link>
     </LoginBox>
   );
 }

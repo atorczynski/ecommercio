@@ -4,6 +4,7 @@ import LoginPage from './pages/Login';
 import { ThemeProvider } from 'emotion-theming';
 import GlobalStyles from './GlobalStyles';
 import light from './themes/defaultTheme';
+import Main from './pages/Main';
 
 function App() {
   return (
@@ -13,6 +14,9 @@ function App() {
         <Switch>
           <Route exact path="/">
             <LoginPage />
+          </Route>
+          <Route exact path="/main">
+            <Main />
           </Route>
         </Switch>
       </Router>
