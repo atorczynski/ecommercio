@@ -1,7 +1,7 @@
 import React from 'react';
 import { withKnobs, text } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
-import Input from '../components/Input';
+import InputBar from '../components/Input';
 
 export default {
   title: 'Import',
@@ -10,8 +10,8 @@ export default {
 
 export function InputField() {
   return (
-    <Input onChange={action('change')} placeholder={'http(s)://yourshop.com'}>
+    <InputBar onChange={action('change')} placeholder={'http(s)://yourshop.com'}>
       {text('Input', 'Value')}
-    </Input>
+    </InputBar>
   );
 }
