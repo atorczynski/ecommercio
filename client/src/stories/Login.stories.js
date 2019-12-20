@@ -9,9 +9,6 @@ export default {
   decorators: [withKnobs]
 };
 
-export function LoginInput() {
-  return <Login placeholder={'E-Mail'} passPlaceholder={'Password'}></Login>;
-}
 export function LoginButton() {
   return <Button onClick={action('clicked')}>{text('Login', 'Text')}</Button>;
 }
