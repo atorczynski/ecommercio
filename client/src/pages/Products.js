@@ -20,11 +20,6 @@ const Wrapper = styled.div`
 `;
 
 export default function Products() {
-  const [imgSrc, setImgSrc] = React.useState('asdasd');
-  const [productName, setProduct] = React.useState('jkkjhj');
-  const [productPrice, setProductPrice] = React.useState('');
-  const [pproductID, setProductID] = React.useState('');
-  const [productRefCount, setProductRefCount] = React.useState('');
   return (
     <Wrapper>
       <InputWrapper>
