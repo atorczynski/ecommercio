@@ -21,6 +21,7 @@ const Wrapper = styled.div`
 
 export default function Products() {
   return (
+
     <Wrapper>
       <InputWrapper>
         <SearchBar placeholder={'Search Products'} />
