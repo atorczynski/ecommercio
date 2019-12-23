@@ -40,7 +40,7 @@ export default function Login(props) {
         value={props.password}
         placeholder={props.passPlaceholder}
       />
-      <Link to="/main">
+      <Link to="/home">
         <Button onClick={props.onClick}>Login</Button>
       </Link>
     </LoginBox>
