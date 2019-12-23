@@ -26,12 +26,14 @@ export default function Products() {
   const [pproductID, setProductID] = React.useState('');
   const [productRefCount, setProductRefCount] = React.useState('');
   return (
+
     <Wrapper>
       <InputWrapper>
         <SearchBar placeholder={'Search Products'} />
       </InputWrapper>
       <ProductElement productName={productName} />
       <BottomNav></BottomNav>
+
     </Wrapper>
   );
 }
