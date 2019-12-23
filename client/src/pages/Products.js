@@ -11,6 +11,13 @@ const InputWrapper = styled.div`
   align-items: center;
   margin-top: 50px;
 `;
+const Wrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+`;
 
 export default function Products() {
   const [imgSrc, setImgSrc] = React.useState('asdasd');
@@ -19,12 +26,12 @@ export default function Products() {
   const [pproductID, setProductID] = React.useState('');
   const [productRefCount, setProductRefCount] = React.useState('');
   return (
-    <div>
+    <Wrapper>
       <InputWrapper>
         <SearchBar placeholder={'Search Products'} />
       </InputWrapper>
       <ProductElement productName={productName} />
       <BottomNav></BottomNav>
-    </div>
+    </Wrapper>
   );
 }

@@ -2,14 +2,6 @@ import React from 'react';
 import styled from '@emotion/styled';
 import Button from './Button';
 
-const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-top: 50px;
-`;
-
 const ProductWrapper = styled.div`
   display: flex;
   flex-direction: row;
@@ -85,31 +77,29 @@ const Seperator = styled.hr`
 
 export default function ProductElement(props) {
   return (
-    <Wrapper>
-      <ProductWrapper>
-        <ImageWrapper>
-          <Image src={props.imgSrc} alt="" />
-        </ImageWrapper>
-        <ContentWrapper>
-          <InfoBoxWrapper>
-            <InfoBox>
-              <InfoText>{props.productName}</InfoText>
-              <InfoText>
-                {props.productPrice} <span>€</span>
-              </InfoText>
-            </InfoBox>
-            <InfoBox>
-              <InfoText>{props.productID}</InfoText>
-              <InfoText>{props.productRefCount}</InfoText>
-            </InfoBox>
-          </InfoBoxWrapper>
-          <Seperator />
-          <FunctionWrapper>
-            <FunctionButton onClick={props.onClick}>Edit</FunctionButton>
-            <FunctionButton onClick={props.onClick}>Delete</FunctionButton>
-          </FunctionWrapper>
-        </ContentWrapper>
-      </ProductWrapper>
-    </Wrapper>
+    <ProductWrapper>
+      <ImageWrapper>
+        <Image src={props.imgSrc} alt="" />
+      </ImageWrapper>
+      <ContentWrapper>
+        <InfoBoxWrapper>
+          <InfoBox>
+            <InfoText>{props.productName}</InfoText>
+            <InfoText>
+              {props.productPrice} <span>€</span>
+            </InfoText>
+          </InfoBox>
+          <InfoBox>
+            <InfoText>{props.productID}</InfoText>
+            <InfoText>{props.productRefCount}</InfoText>
+          </InfoBox>
+        </InfoBoxWrapper>
+        <Seperator />
+        <FunctionWrapper>
+          <FunctionButton onClick={props.onClick}>Edit</FunctionButton>
+          <FunctionButton onClick={props.onClick}>Delete</FunctionButton>
+        </FunctionWrapper>
+      </ContentWrapper>
+    </ProductWrapper>
   );
 }
