@@ -19,9 +19,9 @@ const ProductWrapper = styled.div`
   border-radius: 5%;
 `;
 const ImageWrapper = styled.div`
+  overflow: hidden;
   max-width: 125px;
   max-height: 100%;
-  /* min-width: 125px; */
   min-height: 100%;
   box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
 `;
@@ -35,14 +35,17 @@ const Image = styled.img`
 
 const InfoBoxWrapper = styled.div`
   display: flex;
-  flex-direction: row;
+  margin-left: 5px;
+  flex-direction: column;
   justify-content: space-around;
   height: 50px;
   margin-top: 10px;
 `;
 const InfoBox = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-wrap: no-wrap;
+  flex-basis: 100%;
+  flex-direction: row;
   justify-content: space-around;
   height: 50px;
 `;
@@ -94,13 +97,17 @@ export default function ProductElement(props) {
           <InfoBoxWrapper>
             <InfoBox>
               <InfoText>{props.productName}</InfoText>
+            </InfoBox>
+            <InfoBox>
+              <InfoText>Refs: {props.productRefCount}</InfoText>
+            </InfoBox>
+            <InfoBox>
               <InfoText>
-                {props.productPrice} <span>€</span>
+                Price: {props.productPrice} <span>€</span>
               </InfoText>
             </InfoBox>
             <InfoBox>
-              <InfoText>{props.productID}</InfoText>
-              <InfoText>{props.productRefCount}</InfoText>
+              <InfoText>ID: {props.productID}</InfoText>
             </InfoBox>
           </InfoBoxWrapper>
           <Seperator />

@@ -1,5 +1,52 @@
 {
-  "posts": [{ "id": 1, "title": "json-server", "author": "typicode" }],
-  "comments": [{ "id": 1, "body": "some comment", "postId": 1 }],
-  "profile": { "name": "typicode" }
+  "products": [
+    {
+      "URL": "https://shop.sompex.de/leuchten/villeroy-boch/pendelleuchten/2118/pendelleuchte-kapstadt",
+      "title": "Pendelleuchte Kapstadt",
+      "img": "https://static.sompex.de/media/image/a9/01/c4/57626-96345-Pendelleuchte-Kapstadt_600x600.jpg",
+      "refcount": "300",
+      "ID": "123",
+      "price": "100"
+    },
+    {
+      "URL": "https://shop.sompex.de/leuchten/villeroy-boch/pendelleuchten/2118/pendelleuchte-kapstadt",
+      "title": "Pendelleuchte Kapstadt",
+      "img": "https://static.sompex.de/media/image/a9/01/c4/57626-96345-Pendelleuchte-Kapstadt_600x600.jpg",
+      "refcount": "300",
+      "ID": "123",
+      "price": 100
+    },
+    {
+      "URL": "https://shop.sompex.de/leuchten/villeroy-boch/pendelleuchten/2118/pendelleuchte-kapstadt",
+      "title": "Pendelleuchte Kapstadt",
+      "img": "https://static.sompex.de/media/image/a9/01/c4/57626-96345-Pendelleuchte-Kapstadt_600x600.jpg",
+      "refcount": "300",
+      "ID": "123",
+      "price": 100
+    },
+    {
+      "URL": "https://shop.sompex.de/leuchten/villeroy-boch/pendelleuchten/2118/pendelleuchte-kapstadt",
+      "title": "Pendelleuchte Kapstadt",
+      "img": "https://static.sompex.de/media/image/a9/01/c4/57626-96345-Pendelleuchte-Kapstadt_600x600.jpg",
+      "refcount": "300",
+      "ID": "123",
+      "price": 100
+    },
+    {
+      "URL": "https://shop.sompex.de/leuchten/villeroy-boch/pendelleuchten/2118/pendelleuchte-kapstadt",
+      "title": "Pendelleuchte Kapstadt",
+      "img": "https://static.sompex.de/media/image/a9/01/c4/57626-96345-Pendelleuchte-Kapstadt_600x600.jpg",
+      "refcount": "300",
+      "ID": "123",
+      "price": 100
+    },
+    {
+      "URL": "https://shop.sompex.de/leuchten/villeroy-boch/pendelleuchten/2118/pendelleuchte-kapstadt",
+      "title": "Pendelleuchte Kapstadt",
+      "img": "https://static.sompex.de/media/image/a9/01/c4/57626-96345-Pendelleuchte-Kapstadt_600x600.jpg",
+      "refcount": "300",
+      "ID": "123",
+      "price": "100"
+    }
+  ]
 }

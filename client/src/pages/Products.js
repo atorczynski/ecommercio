@@ -20,13 +20,35 @@ const Wrapper = styled.div`
 `;
 
 export default function Products() {
-  return (
+  const [products, setProducts] = React.useState([]);
 
+  async function getData() {
+    const response = await fetch('http://localhost:3000/products');
+    const data = await response.json();
+    console.log(data);
+    setProducts(data);
+  }
+
+  React.useEffect(() => {
+    getData();
+  }, []);
+
+  return (
     <Wrapper>
       <InputWrapper>
         <SearchBar placeholder={'Search Products'} />
       </InputWrapper>
-      <ProductElement productName={productName} />
+      {products.map(product => (
+        <ProductElement
+          key={product.id}
+          productID={product.ID}
+          productRefCount={product.refcount}
+          productName={product.title}
+          productPrice={product.price}
+          imgSrc={product.img}
+        />
+      ))}
+      <ProductElement productName={'productName'} />
       <BottomNav></BottomNav>
     </Wrapper>
   );
