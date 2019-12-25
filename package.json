@@ -8,6 +8,7 @@
     "@storybook/addon-viewport": "^5.2.8",
     "eslint": "^6.7.2",
     "eslint-plugin-react": "^7.17.0",
+    "nodemon": "^2.0.2",
     "prettier": "^1.19.1"
   },
   "dependencies": {
@@ -16,6 +17,7 @@
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "mongodb": "^3.4.0",
+    "mongoose": "^5.8.3",
     "passport": "^0.4.1"
   },
   "scripts": {
@@ -23,7 +25,8 @@
     "build-storybook": "cd client && npm run build-storybook",
     "build": "npm run build-storybook && npm run build-client",
     "client": "cd client && npm start",
-    "server": "node server.js",
+    "server": "node index.js",
+    "dev": "nodemon index.js",
     "storybook": "cd client && npm run storybook",
     "test": "cd client && npm test",
     "postinstall": "cd client && npm install"
