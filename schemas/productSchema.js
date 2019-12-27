@@ -1,21 +1,23 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const product = new Schema({
+const ProductSchema = new Schema({
   url: {
-    type: String
-  },
-  img: {
-    type: String
+    type: String,
+    required: true
   },
   title: {
-    type: String
+    type: String,
+    required: true
+  },
+  img: {
+    type: String,
+    default:
+      'https://user-images.githubusercontent.com/24848110/33519396-7e56363c-d79d-11e7-969b-09782f5ccbab.png'
   },
   price: {
-    type: Number
-  },
-  productid: {
-    type: String
+    type: Number,
+    required: true
   },
   crawledAt: {
     type: Date,
@@ -23,4 +25,4 @@ const product = new Schema({
   }
 });
 
-module.exports = product;
+module.exports = mongoose.model('Product', ProductSchema, 'products');
