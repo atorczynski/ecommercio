@@ -41,7 +41,6 @@ export default function Products() {
       {products.map(product => (
         <ProductElement
           key={product.id}
-          productID={product.ID}
           productRefCount={product.refcount}
           productName={product.title}
           productPrice={product.price}
