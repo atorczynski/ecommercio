@@ -106,9 +106,6 @@ export default function ProductElement(props) {
                 Price: {props.productPrice} <span>€</span>
               </InfoText>
             </InfoBox>
-            <InfoBox>
-              <InfoText>ID: {props.productID}</InfoText>
-            </InfoBox>
           </InfoBoxWrapper>
           <Seperator />
           <FunctionWrapper>
