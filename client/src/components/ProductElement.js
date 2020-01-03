@@ -4,6 +4,7 @@ import Button from './Button';
 
 const Wrapper = styled.div`
   display: flex;
+  min-width: 95%;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -20,6 +21,9 @@ const ProductWrapper = styled.div`
 `;
 const ImageWrapper = styled.div`
   overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   max-width: 125px;
   max-height: 100%;
   min-height: 100%;
@@ -109,8 +113,8 @@ export default function ProductElement(props) {
           </InfoBoxWrapper>
           <Seperator />
           <FunctionWrapper>
-            <FunctionButton onClick={props.onClick}>Edit</FunctionButton>
-            <FunctionButton onClick={props.onClick}>Delete</FunctionButton>
+            <FunctionButton onClick={props.onClickRefresh}>Refresh</FunctionButton>
+            <FunctionButton onClick={props.onClickDelete}>Delete</FunctionButton>
           </FunctionWrapper>
         </ContentWrapper>
       </ProductWrapper>

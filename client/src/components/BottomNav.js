@@ -13,11 +13,15 @@ const BottomNavigation = styled.nav`
   background: #efefef;
   border: 1px solid #707070;
   box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+  overflow: hidden;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 `;
 
 const Icon = styled.img`
-  height: 55px;
-  margin: 25px;
+  height: 30px;
+  margin: 30px;
 `;
 
 const NavButton = styled.button`
