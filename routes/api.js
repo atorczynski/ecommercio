@@ -13,9 +13,14 @@ router.get('/merchantproducts', async (req, res) => {
   res.send(products);
 });
 
-router.delete('/merchantproducts:id', async (req, res) => {
-  const product = await Products.findById(req.params.id);
-  res.send(product);
+router.delete('/merchantproducts/:id', async (req, res) => {
+  try {
+    const id = req.params.id;
+    const deleted = await Products.findByIdAndDelete(id);
+    res.send(deleted);
+  } catch (error) {
+    console.error(error);
+  }
 });
 
 module.exports = router;
