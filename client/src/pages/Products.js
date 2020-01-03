@@ -23,7 +23,7 @@ export default function Products() {
   const [products, setProducts] = React.useState([]);
 
   async function getData() {
-    const response = await fetch('http://localhost:3000/products');
+    const response = await fetch('http://localhost:3003/api/merchantproducts');
     const data = await response.json();
     console.log(data);
     setProducts(data);
@@ -45,9 +45,10 @@ export default function Products() {
           productName={product.title}
           productPrice={product.price}
           imgSrc={product.img}
+          onClickDelete={() => console.log('Delete')}
+          onClickRefresh={() => console.log('Refresh')}
         />
       ))}
-      <ProductElement productName={'productName'} />
       <BottomNav></BottomNav>
     </Wrapper>
   );
