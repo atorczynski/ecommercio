@@ -1,14 +1,20 @@
 import React from 'react';
 import styled from '@emotion/styled';
+import Button from './Button';
 
 const ProductDetailWrapper = styled.div`
   display: flex;
   flex-direction: column;
+  margin-top: 30px;
   height: 100%;
   width: 100%;
   align-items: center;
 `;
 const ImageWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  background-color: white;
+  height: 300px;
   max-width: 90%;
   min-width: 90%;
   box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
@@ -42,13 +48,6 @@ const ProductPrice = styled.h3`
   text-align: left;
   color: #707070;
 `;
-const InfoText = styled.p`
-  font-family: Roboto;
-  font-weight: normal;
-  font-size: 12px;
-  text-align: left;
-  color: #707070;
-`;
 
 export default function ProductDetail(props) {
   return (
@@ -59,9 +58,10 @@ export default function ProductDetail(props) {
       <InfoContainer>
         <ProductTitle>{props.productTitle}</ProductTitle>
         <ProductPrice> {'Price: ' + props.productPrice} €</ProductPrice>
-        <InfoText>{'Brand Name: ' + props.productBrand}</InfoText>
-        <InfoText>{'Description: ' + props.productDescription}</InfoText>
       </InfoContainer>
+      <a href={props.shopURL}>
+        <Button>Shop</Button>
+      </a>
     </ProductDetailWrapper>
   );
 }

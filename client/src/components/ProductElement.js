@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import Button from './Button';
+import { Link } from 'react-router-dom';
 
 const Wrapper = styled.div`
   display: flex;
@@ -95,7 +96,9 @@ export default function ProductElement(props) {
     <Wrapper>
       <ProductWrapper>
         <ImageWrapper>
-          <Image src={props.imgSrc} alt="" />
+          <Link to={`/products/${props.productIDLink}`}>
+            <Image src={props.imgSrc} alt="" />
+          </Link>
         </ImageWrapper>
         <ContentWrapper>
           <InfoBoxWrapper>
