@@ -8,26 +8,30 @@ import Main from './pages/Main';
 import Import from './pages/Import';
 import TopBar from './components/TopBar';
 import Products from './pages/Products';
+import Register from './pages/Register';
+import ProductDetails from './pages/ProductDetails';
 
 function App() {
   return (
     <ThemeProvider theme={light}>
       <Router>
         <GlobalStyles />
+        <TopBar topText={''} />
         <Switch>
           <Route exact path="/">
             <LoginPage />
           </Route>
           <Route path="/home">
-            <TopBar topText={'Home'} />
             <Main />
           </Route>
           <Route path="/import">
-            <TopBar topText={'Import'} />
             <Import />
           </Route>
-          <Route path="/products">
-            <TopBar topText={'Products'} />
+          <Route path="/products/:id" component={ProductDetails} />
+          <Route path="/register">
+            <Register />
+          </Route>
+          <Route exact path="/products">
             <Products />
           </Route>
         </Switch>
