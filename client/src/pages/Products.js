@@ -3,6 +3,7 @@ import SearchBar from '../components/SearchBar';
 import ProductElement from '../components/ProductElement';
 import styled from '@emotion/styled';
 import BottomNav from '../components/BottomNav';
+import axios from 'axios';
 
 const InputWrapper = styled.div`
   display: flex;
@@ -28,6 +29,13 @@ export default function Products() {
     console.log(data);
     setProducts(data);
   }
+  function deleteProduct(id) {
+    try {
+      axios.delete('http://localhost:3003/api/merchantproducts/' + id, { crossdomain: true });
+    } catch (error) {
+      console.error(error);
+    }
+  }
 
   React.useEffect(() => {
     getData();
@@ -40,12 +48,13 @@ export default function Products() {
       </InputWrapper>
       {products.map(product => (
         <ProductElement
-          key={product.id}
+          productIDLink={product._id}
+          key={product._id}
           productRefCount={product.refcount}
           productName={product.title}
           productPrice={product.price}
           imgSrc={product.img}
-          onClickDelete={() => console.log('Delete')}
+          onClickDelete={() => deleteProduct(product._id)}
           onClickRefresh={() => console.log('Refresh')}
         />
       ))}
