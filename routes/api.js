@@ -13,6 +13,12 @@ router.get('/merchantproducts', async (req, res) => {
   res.send(products);
 });
 
+router.get('/merchantproducts/:id', async (req, res) => {
+  const id = req.params.id;
+  const products = await Products.findById(id);
+  res.send(products);
+});
+
 router.delete('/merchantproducts/:id', async (req, res) => {
   try {
     const id = req.params.id;
