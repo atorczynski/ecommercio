@@ -6,11 +6,14 @@ const port = 3003;
 const apiRoutes = require('./routes/api');
 app.use(express.json());
 
-app.use(function(req, res, next) {
-  res.header('Access-Control-Allow-Origin', 'http://localhost:3000');
-  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+const corsMiddleware = (req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Headers', '*');
+  res.header('Access-Control-Allow-Methods', 'OPTIONS, POST, DELETE');
   next();
-});
+};
+
+app.use(corsMiddleware);
 
 mongoose.connect(
   'mongodb://127.0.0.1:27017/',
