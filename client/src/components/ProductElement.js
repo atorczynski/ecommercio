@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 const Wrapper = styled.div`
   display: flex;
-  min-width: 95%;
+  min-width: 98%;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -15,8 +15,8 @@ const Wrapper = styled.div`
 const ProductWrapper = styled.div`
   display: flex;
   flex-direction: row;
-  width: 90%;
-  height: 120px;
+  width: 95%;
+  height: 150px;
   background: #fff;
   border-radius: 5%;
 `;
