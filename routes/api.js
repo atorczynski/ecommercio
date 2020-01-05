@@ -23,6 +23,7 @@ router.delete('/merchantproducts/:id', async (req, res) => {
   try {
     const id = req.params.id;
     const deleted = await Products.findByIdAndDelete(id);
+    console.log(id + ' deleted!');
     res.send(deleted);
   } catch (error) {
     console.error(error);
