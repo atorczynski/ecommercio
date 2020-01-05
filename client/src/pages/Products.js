@@ -2,7 +2,6 @@ import React from 'react';
 import SearchBar from '../components/SearchBar';
 import ProductElement from '../components/ProductElement';
 import styled from '@emotion/styled';
-import BottomNav from '../components/BottomNav';
 import axios from 'axios';
 
 const InputWrapper = styled.div`
@@ -58,7 +57,6 @@ export default function Products() {
           onClickRefresh={() => console.log('Refresh')}
         />
       ))}
-      <BottomNav></BottomNav>
     </Wrapper>
   );
 }
