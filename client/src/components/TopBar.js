@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from '@emotion/styled';
+import LogoSvg from '../components/Logo';
 import PropTypes from 'prop-types';
-import { useLocation } from 'react-router-dom';
 
 const AppBar = styled.div`
   height: 75px;
@@ -12,45 +12,10 @@ const AppBar = styled.div`
   box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
 `;
 
-const Greeting = styled.h2`
-  width: 66%;
-  flex-wrap: wrap;
-  font-family: Roboto;
-  font-weight: normal;
-  letter-spacing: 0.05em;
-  text-align: left;
-  color: ${props => props.theme.color.primary};
-  p {
-    text-transform: capitalize;
-  }
-`;
-
-const Avatar = styled.div`
-  width: 50px;
-  height: 50px;
-  background: url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F1%2F18%2FGlatt_-_Glattbrugg_IMG_6869.jpg%2F1200px-Glatt_-_Glattbrugg_IMG_6869.jpg&f=s1&nofb=1');
-  border: 1px solid #707070;
-  border-radius: 50%;
-`;
-
 export default function TopBar(props) {
-  function shortString(name) {
-    if (name.length > 17) {
-      return name.substring(0, 15) + '...';
-    } else {
-      return name;
-    }
-  }
-  const location = useLocation();
-  let cleanTitle = location.pathname;
-  cleanTitle = cleanTitle.replace('/', '');
-
   return (
     <AppBar>
-      <Greeting>
-        <p>{shortString(cleanTitle)}</p>
-      </Greeting>
-      <Avatar></Avatar>
+      <LogoSvg />
     </AppBar>
   );
 }
