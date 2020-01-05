@@ -24,6 +24,9 @@ const ProductSchema = new Schema({
     required: true,
     default: 0
   },
+  description: {
+    type: String
+  },
   crawledAt: {
     type: Date,
     default: Date.now()
