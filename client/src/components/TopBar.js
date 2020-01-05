@@ -2,10 +2,9 @@ import React from 'react';
 import styled from '@emotion/styled';
 import LogoSvg from '../components/Logo';
 import PropTypes from 'prop-types';
-import { useLocation } from 'react-router-dom';
 
 const AppBar = styled.div`
-  height: 75px;
+  height: 55px;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -13,7 +12,7 @@ const AppBar = styled.div`
   box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
 `;
 
-export default function TopBar(props) {
+export default function TopBar() {
   return (
     <AppBar>
       <LogoSvg />
