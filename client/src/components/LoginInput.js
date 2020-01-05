@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 const LoginBox = styled.div`
   display: flex;
   flex-direction: column;
+  margin-top: 150px;
   height: 50%;
   align-items: center;
   align-content: center;

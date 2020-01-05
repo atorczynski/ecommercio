@@ -16,8 +16,13 @@ const ProductSchema = new Schema({
       'https://user-images.githubusercontent.com/24848110/33519396-7e56363c-d79d-11e7-969b-09782f5ccbab.png'
   },
   price: {
-    type: Number,
+    type: String,
     required: true
+  },
+  referrals: {
+    type: Number,
+    required: true,
+    default: 0
   },
   crawledAt: {
     type: Date,
