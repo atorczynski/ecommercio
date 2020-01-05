@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import PropTypes from 'prop-types';
+import { useLocation } from 'react-router-dom';
 
 const AppBar = styled.div`
   height: 75px;
@@ -19,6 +20,9 @@ const Greeting = styled.h2`
   letter-spacing: 0.05em;
   text-align: left;
   color: ${props => props.theme.color.primary};
+  p {
+    text-transform: capitalize;
+  }
 `;
 
 const Avatar = styled.div`
@@ -37,11 +41,14 @@ export default function TopBar(props) {
       return name;
     }
   }
+  const location = useLocation();
+  let cleanTitle = location.pathname;
+  cleanTitle = cleanTitle.replace('/', '');
 
   return (
     <AppBar>
       <Greeting>
-        <p>{shortString(props.topText)}</p>
+        <p>{shortString(cleanTitle)}</p>
       </Greeting>
       <Avatar></Avatar>
     </AppBar>
