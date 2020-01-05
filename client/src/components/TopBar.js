@@ -2,6 +2,7 @@ import React from 'react';
 import styled from '@emotion/styled';
 import LogoSvg from '../components/Logo';
 import PropTypes from 'prop-types';
+import { useLocation } from 'react-router-dom';
 
 const AppBar = styled.div`
   height: 75px;
