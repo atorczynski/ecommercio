@@ -2,6 +2,12 @@ const cheerio = require('cheerio');
 const axios = require('axios');
 const Product = require('../schemas/productSchema');
 
+function cleanPrice(str) {
+  const removeAfter = str.indexOf('€');
+  const cleanString = str.substring(0, removeAfter);
+  return cleanString;
+}
+
 async function scrapeURL(productURL, scrapedURLs) {
   try {
     console.log(productURL);
@@ -17,7 +23,8 @@ async function scrapeURL(productURL, scrapedURLs) {
       const price = $('.product--price')
         .first()
         .text();
-      const numPrice = parseFloat(price) || -1;
+      const numPrice = cleanPrice(price) || -1;
+
       console.log(title, img, price, numPrice);
       const crawledProduct = new Product({
         url: productURL,
@@ -38,9 +45,6 @@ async function scrapeURL(productURL, scrapedURLs) {
     }
     // allLinks.each((index, link) => {
     //   const href = link.attribs.href || '';
-
-    //   if (href.startsWith('https://shop.sompex.de/') && !scrapedURLs.includes(href)) {
-    //     scrapeURL(href, scrapedURLs);
     //   }
     // });
   } catch (error) {
