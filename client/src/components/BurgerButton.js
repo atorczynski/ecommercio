@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled';
+import { css } from '@emotion/core';
 
 export const StyledBurger = styled.button`
   top: 5%;
@@ -29,17 +30,30 @@ export const StyledBurger = styled.button`
     transform-origin: 1px;
 
     :first-of-type {
-      transform: ${props => (props.open ? 'rotate(45deg)' : 'rotate(0)')};
+      ${props => (props.open ? open : '')}
     }
 
     :nth-of-type(2) {
-      opacity: ${({ open }) => (open ? '0' : '1')};
-      transform: ${props => (props.open ? 'translateX(20px)' : 'translateX(0)')};
+      ${props => (props.open ? open : '')};
     }
 
     :nth-of-type(3) {
-      transform: ${props => (props.open ? 'rotate(-45deg)' : 'rotate(0)')};
+      ${props => (props.open ? open : '')};
     }
+  }
+`;
+
+const open = css`
+  :first-of-type {
+    transform: rotate(45deg);
+  }
+
+  :nth-of-type(2) {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  :nth-of-type(3) {
+    transform: rotate(-45deg);
   }
 `;
 
