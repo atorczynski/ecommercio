@@ -49,9 +49,9 @@ const InfoBoxWrapper = styled.div`
 const InfoBox = styled.div`
   display: flex;
   flex-wrap: no-wrap;
+  margin-left: 10px;
   flex-basis: 100%;
   flex-direction: row;
-  justify-content: space-around;
   height: 50px;
 `;
 
@@ -59,7 +59,6 @@ const InfoText = styled.p`
   font-family: Roboto;
   font-weight: normal;
   font-size: 12px;
-  text-align: left;
   margin: 5px 0px 0px 0px;
   color: #707070;
 `;
@@ -83,11 +82,12 @@ const FunctionButton = styled(Button)`
 `;
 
 const Seperator = styled.hr`
-  width: 170px;
+  width: 220px;
   height: 0px;
   margin-top: 15px;
-  border: 1px solid #707070;
+  border: 1px solid #ed462e;
   font-family: 'Roboto';
+  margin-top: 35px;
   opacity: 0.3;
 `;
 
@@ -106,7 +106,7 @@ export default function ProductElement(props) {
               <InfoText>{props.productName}</InfoText>
             </InfoBox>
             <InfoBox>
-              <InfoText>Refs: {props.productRefCount}</InfoText>
+              <InfoText>Referrals: {props.productRefCount}</InfoText>
             </InfoBox>
             <InfoBox>
               <InfoText>

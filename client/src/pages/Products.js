@@ -9,14 +9,14 @@ const InputWrapper = styled.div`
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  margin-top: 50px;
+  margin-top: 20px;
 `;
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 50px;
+  margin-top: 40px;
 `;
 
 export default function Products() {
@@ -49,7 +49,7 @@ export default function Products() {
         <ProductElement
           productIDLink={product._id}
           key={product._id}
-          productRefCount={product.refcount}
+          productRefCount={product.referrals}
           productName={product.title}
           productPrice={product.price}
           imgSrc={product.img}
