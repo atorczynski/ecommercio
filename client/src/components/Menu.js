@@ -34,19 +34,19 @@ export default function Menu(props) {
   return (
     <StyledMenu open={props.open}>
       <a href="/home">
-        <span role="img" aria-label="about us"></span>
+        <span role="img" aria-label="about us" />
         Home
       </a>
       <a href="/import">
-        <span role="img" aria-label="price"></span>
+        <span role="img" aria-label="price" />
         Import
       </a>
       <a href="/products">
-        <span role="img" aria-label="contact"></span>
+        <span role="img" aria-label="contact" />
         Products
       </a>
       <a href="/settings">
-        <span role="img" aria-label="contact"></span>
+        <span role="img" aria-label="contact" />
         Settings
       </a>
     </StyledMenu>
