@@ -2,9 +2,12 @@ import React from 'react';
 import styled from '@emotion/styled';
 import LogoSvg from '../components/Logo';
 import PropTypes from 'prop-types';
+import BurgerButton from './BurgerButton';
+import Menu from './Menu';
 
 const AppBar = styled.div`
-  height: 55px;
+  height: 65px;
+  width: 100%;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -13,8 +16,16 @@ const AppBar = styled.div`
 `;
 
 export default function TopBar() {
+  const [openMenu, setOpenMenu] = React.useState(false);
   return (
     <AppBar>
+      <BurgerButton
+        open={openMenu}
+        onClick={() => {
+          setOpenMenu(!openMenu);
+        }}
+      />
+      <Menu open={openMenu} />
       <LogoSvg />
     </AppBar>
   );

@@ -16,7 +16,7 @@ function App() {
     <ThemeProvider theme={light}>
       <Router>
         <GlobalStyles />
-        <TopBar topText={''} />
+        <TopBar />
         <Switch>
           <Route exact path="/">
             <LoginPage />
