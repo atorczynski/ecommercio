@@ -5,9 +5,13 @@ export default function ProductDetails({ match }) {
   const [product, setProduct] = React.useState({});
 
   async function getDetails() {
-    const response = await fetch('http://localhost:3003/api/merchantproducts/' + match.params.id);
-    const data = await response.json();
-    setProduct(data);
+    try {
+      const response = await fetch('http://localhost:3003/api/merchantproducts/' + match.params.id);
+      const data = await response.json();
+      setProduct(data);
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   React.useEffect(() => {
@@ -22,6 +26,7 @@ export default function ProductDetails({ match }) {
         imgSrc={product.img}
         productTitle={product.title}
         productPrice={product.price}
+        productDescription={product.description}
         shopURL={product.url}
       />
     </>

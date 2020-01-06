@@ -9,10 +9,11 @@ const MenuWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 50px;
 `;
 
 const SettingsButton = styled(MainMenuButton)`
-  margin-top: 40px;
+  margin-top: 80px;
 `;
 export default function MainMenu(props) {
   return (

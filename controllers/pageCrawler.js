@@ -24,11 +24,13 @@ async function scrapeURL(productURL, scrapedURLs) {
         .first()
         .text();
       const numPrice = cleanPrice(price) || -1;
+      const description = $('div.product--description').text();
 
-      console.log(title, img, price, numPrice);
+      console.log(title, description, img, price, numPrice);
       const crawledProduct = new Product({
         url: productURL,
         title: title,
+        description: description,
         img: img,
         price: numPrice
       });
