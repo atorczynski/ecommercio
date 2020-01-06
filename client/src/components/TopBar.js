@@ -1,9 +1,10 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import LogoSvg from '../components/Logo';
+import Logo from '../assets/logo.svg';
 import PropTypes from 'prop-types';
 import BurgerButton from './BurgerButton';
 import Menu from './Menu';
+import { Link } from 'react-router-dom';
 
 const AppBar = styled.div`
   height: 65px;
@@ -13,6 +14,12 @@ const AppBar = styled.div`
   align-items: center;
   justify-content: space-around;
   box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+`;
+
+const LogoTopBar = styled.img`
+  height: 135px;
+  width: 300px;
+  margin-right: -90px;
 `;
 
 export default function TopBar() {
@@ -26,7 +33,9 @@ export default function TopBar() {
         }}
       />
       <Menu open={openMenu} />
-      <LogoSvg />
+      <Link to={'/home'}>
+        <LogoTopBar src={Logo} />
+      </Link>
     </AppBar>
   );
 }
