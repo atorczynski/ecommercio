@@ -23,21 +23,19 @@ export default function Products() {
   const [products, setProducts] = React.useState([]);
 
   async function getData() {
-    const response = await fetch('http://localhost:3003/api/merchantproducts');
-    const data = await response.json();
-    console.log(data);
-    setProducts(data);
+    const response = await axios.get('http://localhost:3000/api/merchantproducts/');
+    setProducts(response.data);
   }
   function deleteProduct(id) {
     try {
-      axios.delete('http://localhost:3003/api/merchantproducts/' + id, { crossdomain: true });
+      axios.delete('http://localhost:3000/api/merchantproducts/' + id, { crossdomain: true });
     } catch (error) {
       console.error(error);
     }
   }
   function updateProduct(url) {
     try {
-      axios.put('http://localhost:3003/api/merchantproducts/', { params: { url: url } });
+      axios.put('http://localhost:3000/api/merchantproducts/', { params: { url: url } });
     } catch (error) {
       console.error(error);
     }
