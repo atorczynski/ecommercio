@@ -28,17 +28,28 @@ export default function Products() {
   }
   function deleteProduct(id) {
     try {
-      axios.delete('http://localhost:3000/api/merchantproducts/' + id, { crossdomain: true });
+      axios.delete('http://localhost:3000/api/merchantproducts/' + id);
     } catch (error) {
       console.error(error);
     }
   }
-  function updateProduct(url) {
+  function updateProduct(url, id) {
     try {
-      axios.put('http://localhost:3000/api/merchantproducts/', { params: { url: url } });
+      axios.put('http://localhost:3000/api/merchantproducts/', { params: { url: url, id: id } });
     } catch (error) {
       console.error(error);
     }
+  }
+
+  async function searchProducts(searchQuery) {
+    const response = await axios.get('http://localhost:3000/api/search/' + searchQuery);
+    setProducts(response.data);
+  }
+
+  function handleChange(value) {
+    setTimeout(() => {
+      searchProducts(value, 2000);
+    }, 5000);
   }
 
   React.useEffect(() => {
@@ -48,7 +59,12 @@ export default function Products() {
   return (
     <Wrapper>
       <InputWrapper>
-        <SearchBar placeholder={'Search Products'} />
+        <SearchBar
+          placeholder={'Search Products'}
+          onChange={e => {
+            handleChange(e.target.value);
+          }}
+        />
       </InputWrapper>
       {products.map(product => (
         <ProductElement
@@ -59,7 +75,7 @@ export default function Products() {
           productPrice={product.price}
           imgSrc={product.img}
           onClickDelete={() => deleteProduct(product._id)}
-          onClickRefresh={() => updateProduct(product.url)}
+          onClickRefresh={() => updateProduct(product.url, product._id)}
         />
       ))}
     </Wrapper>

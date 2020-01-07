@@ -14,7 +14,9 @@ router.put('/merchantproducts', (req, res) => {
   try {
     console.log(req);
     const url = req.body.params.url;
-    pageCrawler.scrapeSingleURL(url);
+    const id = req.body.params.id;
+    console.log(id, url);
+    pageCrawler.scrapeSingleURL(url, id);
     res.end();
   } catch (error) {
     console.error(error);
@@ -24,6 +26,20 @@ router.put('/merchantproducts', (req, res) => {
 router.get('/merchantproducts', async (req, res) => {
   const products = await Products.find();
   res.send(products);
+});
+
+router.get('/search/:query', async (req, res) => {
+  try {
+    const searchQuery = req.params.query;
+    const foundProducts = await Products.find({
+      title: { $regex: '.*' + searchQuery + '.*', $options: 'i' }
+    });
+    console.log(foundProducts);
+    res.send(foundProducts);
+    res.end();
+  } catch (error) {
+    console.error(error);
+  }
 });
 
 router.get('/merchantproducts/:id', async (req, res) => {
