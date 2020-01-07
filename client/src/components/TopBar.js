@@ -23,13 +23,11 @@ const LogoWrapper = styled.div`
   justify-content: center;
   align-items: center;
   align-content: center;
-  /* height: 125px; */
-  width: 125px;
+  width: 100px;
   overflow: hidden;
 `;
 
 const LogoTopBar = styled.img`
-  /* height: 135px; */
   width: 200px;
 `;
 
