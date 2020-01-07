@@ -8,7 +8,7 @@ function cleanPrice(str) {
   return cleanString;
 }
 
-async function scrapeSingleURL(productURL) {
+async function scrapeSingleURL(productURL, id) {
   try {
     console.log(productURL);
     const res = await axios.get(productURL);
@@ -25,14 +25,24 @@ async function scrapeSingleURL(productURL) {
       const description = $('div.product--description').text();
 
       console.log(title, description, img, price, numPrice);
-      const crawledProduct = new Product({
+      const updatedProduct = {
         url: productURL,
         title: title,
         description: description,
         img: img,
         price: numPrice
-      });
-      await crawledProduct.save();
+      };
+      console.log(updatedProduct);
+      const doc = await Product.findOne({ _id: id });
+      await Product.updateOne(
+        { _id: doc._id },
+        {
+          title: updatedProduct.title,
+          description: updatedProduct.description,
+          img: updatedProduct.img,
+          price: updatedProduct.price
+        }
+      );
     }
   } catch (error) {
     console.error('Error: ', productURL, error);
