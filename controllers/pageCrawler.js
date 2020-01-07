@@ -11,7 +11,6 @@ function cleanPrice(str) {
 async function scrapeURL(productURL, scrapedURLs) {
   try {
     console.log(productURL);
-    // if (scrapedURLs.length > 10) return;
     scrapedURLs.push(productURL);
     const res = await axios.get(productURL);
     const $ = cheerio.load(res.data);
@@ -45,10 +44,6 @@ async function scrapeURL(productURL, scrapedURLs) {
         await scrapeURL(href, scrapedURLs);
       }
     }
-    // allLinks.each((index, link) => {
-    //   const href = link.attribs.href || '';
-    //   }
-    // });
   } catch (error) {
     console.error('Error: ', productURL, error);
   }
