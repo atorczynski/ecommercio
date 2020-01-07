@@ -35,6 +35,13 @@ export default function Products() {
       console.error(error);
     }
   }
+  function updateProduct(url) {
+    try {
+      axios.put('http://localhost:3003/api/merchantproducts/', { params: { url: url } });
+    } catch (error) {
+      console.error(error);
+    }
+  }
 
   React.useEffect(() => {
     getData();
@@ -54,7 +61,7 @@ export default function Products() {
           productPrice={product.price}
           imgSrc={product.img}
           onClickDelete={() => deleteProduct(product._id)}
-          onClickRefresh={() => console.log('Refresh')}
+          onClickRefresh={() => updateProduct(product.url)}
         />
       ))}
     </Wrapper>

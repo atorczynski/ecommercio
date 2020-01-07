@@ -1,11 +1,23 @@
 const express = require('express');
 const router = express.Router();
 const crawler = require('../controllers/pageCrawler');
+const pageCrawler = require('../controllers/singlePageCrawler');
 const Products = require('../schemas/productSchema');
 
 router.post('/merchantproducts', (req, res) => {
   const baseURL = req.body.params.baseURL;
   crawler.scrapeURL(baseURL, []);
+});
+
+router.put('/merchantproducts', (req, res) => {
+  try {
+    console.log(req);
+    const url = req.body.params.url;
+    pageCrawler.scrapeSingleURL(url);
+    process.nextTick();
+  } catch (error) {
+    console.error(error);
+  }
 });
 
 router.get('/merchantproducts', async (req, res) => {

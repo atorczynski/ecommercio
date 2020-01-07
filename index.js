@@ -1,15 +1,17 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const morgan = require('morgan');
 const app = express();
 const port = 3003;
 
+app.use(morgan('combined'));
 const apiRoutes = require('./routes/api');
 app.use(express.json());
 
 const corsMiddleware = (req, res, next) => {
   res.header('Access-Control-Allow-Origin', '*');
   res.header('Access-Control-Allow-Headers', '*');
-  res.header('Access-Control-Allow-Methods', 'OPTIONS, POST, DELETE');
+  res.header('Access-Control-Allow-Methods', 'OPTIONS, POST, DELETE, PUT');
   next();
 };
 
