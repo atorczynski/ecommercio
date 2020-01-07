@@ -7,6 +7,7 @@ const Products = require('../schemas/productSchema');
 router.post('/merchantproducts', (req, res) => {
   const baseURL = req.body.params.baseURL;
   crawler.scrapeURL(baseURL, []);
+  res.end();
 });
 
 router.put('/merchantproducts', (req, res) => {
@@ -14,7 +15,7 @@ router.put('/merchantproducts', (req, res) => {
     console.log(req);
     const url = req.body.params.url;
     pageCrawler.scrapeSingleURL(url);
-    process.nextTick();
+    res.end();
   } catch (error) {
     console.error(error);
   }
