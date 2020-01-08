@@ -9,6 +9,7 @@ function cleanPrice(str) {
 }
 
 async function scrapeSingleURL(productURL, id) {
+
     console.log(productURL);
     const res = await axios.get(productURL);
     const $ = cheerio.load(res.data);
