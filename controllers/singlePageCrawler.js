@@ -33,16 +33,7 @@ async function scrapeSingleURL(productURL, id) {
         price: numPrice
       };
       console.log(updatedProduct);
-      const doc = await Product.findOne({ _id: id });
-      await Product.updateOne(
-        { _id: doc._id },
-        {
-          title: updatedProduct.title,
-          description: updatedProduct.description,
-          img: updatedProduct.img,
-          price: updatedProduct.price
-        }
-      );
+      await Product.updateOne({ _id: id }, updatedProduct);
     }
   } catch (error) {
     console.error('Error: ', productURL, error);

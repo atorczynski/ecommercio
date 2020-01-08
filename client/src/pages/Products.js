@@ -41,14 +41,10 @@ export default function Products() {
     }
   }
 
-  async function searchProducts(searchQuery) {
-    const response = await axios.get('http://localhost:3000/api/search/' + searchQuery);
-    setProducts(response.data);
-  }
-
   function handleChange(value) {
-    setTimeout(() => {
-      searchProducts(value, 2000);
+    setTimeout(async () => {
+      const response = await axios.get('http://localhost:3000/api/search/' + value);
+      setProducts(response.data);
     }, 5000);
   }
 
