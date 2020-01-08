@@ -6,7 +6,7 @@ export default function ProductDetails({ match }) {
 
   async function getDetails() {
     try {
-      const response = await fetch('http://localhost:3003/api/merchantproducts/' + match.params.id);
+      const response = await fetch('/api/merchantproducts/' + match.params.id);
       const data = await response.json();
       setProduct(data);
     } catch (error) {

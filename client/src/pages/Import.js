@@ -7,7 +7,7 @@ export default function Import() {
 
 
   function sendReq(baseURLValue) {
-    axios.post('http://localhost:3003/api/merchantproducts', { params: { baseURL: baseURLValue } });
+    axios.post('/api/merchantproducts', { params: { baseURL: baseURLValue } });
   }
   return (
     <>
