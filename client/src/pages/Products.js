@@ -20,48 +20,60 @@ const Wrapper = styled.div`
 `;
 
 export default function Products() {
-  const [products, setProducts] = React.useState([]);
+  const [products, setProducts] = React.useState(null);
+  const [search, setSearch] = React.useState('');
 
-  async function getData() {
-    const response = await axios.get('http://localhost:3000/api/merchantproducts/');
-    setProducts(response.data);
-  }
   function deleteProduct(id) {
     try {
-      axios.delete('http://localhost:3000/api/merchantproducts/' + id, { crossdomain: true });
+      axios.delete('/api/merchantproducts/' + id);
     } catch (error) {
       console.error(error);
     }
   }
-  function updateProduct(url) {
+  function updateProduct(url, id) {
     try {
-      axios.put('http://localhost:3000/api/merchantproducts/', { params: { url: url } });
+      axios.put('/api/merchantproducts/', { params: { url: url, id: id } });
     } catch (error) {
       console.error(error);
     }
+  }
+
+  async function getData() {
+    const response = await axios.get(`/api/merchantproducts?q=${search}`);
+    setProducts(response.data);
   }
 
   React.useEffect(() => {
     getData();
   }, []);
 
+  React.useEffect(() => {
+    if (products) {
+      const timeoutId = setTimeout(getData, 800);
+      return () => {
+        clearInterval(timeoutId);
+      };
+    }
+  }, [search]);
+
   return (
     <Wrapper>
       <InputWrapper>
-        <SearchBar placeholder={'Search Products'} />
-      </InputWrapper>
-      {products.map(product => (
-        <ProductElement
-          productIDLink={product._id}
-          key={product._id}
-          productRefCount={product.referrals}
-          productName={product.title}
-          productPrice={product.price}
-          imgSrc={product.img}
-          onClickDelete={() => deleteProduct(product._id)}
-          onClickRefresh={() => updateProduct(product.url)}
+        <SearchBar
+          placeholder={'Search Products'}
+          value={search}
+          onChange={event => setSearch(event.target.value)}
         />
-      ))}
+      </InputWrapper>
+      {products &&
+        products.map(product => (
+          <ProductElement
+            key={product._id}
+            {...product}
+            onClickDelete={() => deleteProduct(product._id)}
+            onClickRefresh={() => updateProduct(product.url, product._id)}
+          />
+        ))}
     </Wrapper>
   );
 }
