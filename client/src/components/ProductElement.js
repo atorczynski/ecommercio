@@ -96,21 +96,21 @@ export default function ProductElement(props) {
     <Wrapper>
       <ProductWrapper>
         <ImageWrapper>
-          <Link to={`/products/${props.productIDLink}`}>
-            <Image src={props.imgSrc} alt="" />
+          <Link to={`/products/${props._id}`}>
+            <Image src={props.img} alt="" />
           </Link>
         </ImageWrapper>
         <ContentWrapper>
           <InfoBoxWrapper>
             <InfoBox>
-              <InfoText>{props.productName}</InfoText>
+              <InfoText>{props.title}</InfoText>
             </InfoBox>
             <InfoBox>
-              <InfoText>Referrals: {props.productRefCount}</InfoText>
+              <InfoText>Referrals: {props.referrals}</InfoText>
             </InfoBox>
             <InfoBox>
               <InfoText>
-                Price: {props.productPrice} <span>€</span>
+                Price: {props.price} <span>€</span>
               </InfoText>
             </InfoBox>
           </InfoBoxWrapper>
