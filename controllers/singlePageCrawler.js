@@ -9,7 +9,6 @@ function cleanPrice(str) {
 }
 
 async function scrapeSingleURL(productURL, id) {
-  try {
     console.log(productURL);
     const res = await axios.get(productURL);
     const $ = cheerio.load(res.data);
@@ -35,8 +34,6 @@ async function scrapeSingleURL(productURL, id) {
       console.log(updatedProduct);
       await Product.updateOne({ _id: id }, updatedProduct);
     }
-  } catch (error) {
-    console.error('Error: ', productURL, error);
-  }
+  
 }
 exports.scrapeSingleURL = scrapeSingleURL;
