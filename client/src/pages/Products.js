@@ -60,6 +60,7 @@ export default function Products() {
     <Wrapper>
       <InputWrapper>
         <SearchBar
+          autoFocus
           placeholder={'Search Products'}
           value={search}
           onChange={event => setSearch(event.target.value)}
