@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const crawler = require('../controllers/pageCrawler');
-const pageCrawler = require('../controllers/singlePageCrawler');
+const crawler = require('../lib/controllers/shopware/pageCrawler');
+const pageCrawler = require('../lib/controllers/shopware/singlePageCrawler');
 const Products = require('../schemas/productSchema');
 
 router.get('/merchantproducts/:id', async (req, res) => {
