@@ -5,9 +5,6 @@
   "dependencies": {
     "@emotion/core": "^10.0.22",
     "@emotion/styled": "^10.0.23",
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.3.3",
-    "@testing-library/user-event": "^7.1.2",
     "emotion-theming": "^10.0.19",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
@@ -39,7 +36,6 @@
   "devDependencies": {
     "@storybook/addon-actions": "^5.2.8",
     "@storybook/addon-knobs": "^5.2.8",
-    "@storybook/addon-links": "^5.2.8",
     "@storybook/addon-viewport": "^5.2.8",
     "@storybook/addons": "^5.2.8",
     "@storybook/react": "^5.2.8"

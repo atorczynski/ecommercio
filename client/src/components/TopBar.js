@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import Logo from '../assets/logo.svg';
-import PropTypes from 'prop-types';
 import BurgerButton from './BurgerButton';
 import Menu from './Menu';
 import { Link } from 'react-router-dom';
@@ -50,7 +49,3 @@ export default function TopBar() {
     </AppBar>
   );
 }
-
-TopBar.propTypes = {
-  merchantName: PropTypes.string
-};

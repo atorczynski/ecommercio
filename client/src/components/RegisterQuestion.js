@@ -11,14 +11,10 @@ const RegisterWrapper = styled.div`
   margin-top: 140px;
 `;
 
-const Question = styled.h4`
-  margin: 0;
-`;
-
 export default function RegisterQuestion() {
   return (
     <RegisterWrapper>
-      <Question>Dont have an account yet?</Question>
+      <h4>Dont have an account yet?</h4>
       <Link to="/register">
         <Button>Register</Button>
       </Link>
