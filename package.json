@@ -1,25 +1,22 @@
 {
   "name": "ecommercio",
   "version": "1.0.0",
-  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
+  "description": "ecommercio crawls products from various shopsystems",
   "main": "index.js",
   "devDependencies": {
-    "@storybook/addon-knobs": "^5.2.8",
-    "@storybook/addon-viewport": "^5.2.8",
     "eslint": "^6.7.2",
     "eslint-plugin-react": "^7.17.0",
-    "morgan": "^1.9.1",
     "nodemon": "^2.0.2",
     "prettier": "^1.19.1"
   },
   "dependencies": {
     "axios": "^0.19.0",
+    "morgan": "^1.9.1",
     "cheerio": "^1.0.0-rc.3",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "mongodb": "^3.4.0",
-    "mongoose": "^5.8.3",
-    "passport": "^0.4.1"
+    "mongoose": "^5.8.3"
   },
   "scripts": {
     "build-client": "cd client && npm run build",
@@ -29,7 +26,6 @@
     "server": "node index.js",
     "dev": "nodemon index.js",
     "storybook": "cd client && npm run storybook",
-    "test": "cd client && npm test",
     "postinstall": "cd client && npm install"
   },
   "repository": {

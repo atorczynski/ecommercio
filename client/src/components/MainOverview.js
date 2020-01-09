@@ -12,7 +12,7 @@ const Seperator = styled.hr`
   width: 273px;
   height: 0px;
   background: transparent;
-  border: 1px solid #707070;
+  border: 1px solid #ed462e;
   opacity: 0.17;
 `;
 

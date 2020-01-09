@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export const StyledMenu = styled.nav`
   display: flex;
@@ -24,31 +25,36 @@ export const StyledMenu = styled.nav`
     padding: 2rem 0;
     font-weight: bold;
     letter-spacing: 0.5rem;
-    color: ${({ theme }) => theme.primaryDark};
     text-decoration: none;
     transition: color 0.3s linear;
   }
+`;
+const Seperator = styled.hr`
+  width: 273px;
+  height: 0px;
+  border: 1px solid #707070;
+  opacity: 0.17;
 `;
 
 export default function Menu(props) {
   return (
     <StyledMenu open={props.open}>
-      <a href="/home">
-        <span role="img" aria-label="about us" />
-        Home
-      </a>
-      <a href="/import">
-        <span role="img" aria-label="price" />
-        Import
-      </a>
-      <a href="/products">
-        <span role="img" aria-label="contact" />
-        Products
-      </a>
-      <a href="/settings">
-        <span role="img" aria-label="contact" />
-        Settings
-      </a>
+      <Seperator />
+      <Link to={'/home'}>
+        <p>Home</p>
+      </Link>
+      <Link to={'/import'}>
+        <p>Import</p>
+      </Link>
+      <Link to={'/products'}>
+        <p>Products</p>
+      </Link>
+      <Link to={'/billing'}>
+        <p>Billing</p>
+      </Link>
+      <Link to={'/settings'}>
+        <p>Settings</p>
+      </Link>
     </StyledMenu>
   );
 }

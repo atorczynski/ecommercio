@@ -65,16 +65,16 @@ export default function ProductDetail(props) {
   return (
     <ProductDetailWrapper>
       <ImageWrapper>
-        <Image src={props.imgSrc} alt="" />
+        <Image src={props.img} alt="" />
       </ImageWrapper>
       <InfoContainer>
-        <ProductTitle>{props.productTitle}</ProductTitle>
+        <ProductTitle>{props.title}</ProductTitle>
         <InfoText>Price:</InfoText>
-        <ProductPrice> {props.productPrice}€</ProductPrice>
+        <ProductPrice> {props.price}€</ProductPrice>
         <InfoText>Description:</InfoText>
-        <ProductDescription>{props.productDescription}</ProductDescription>
+        <ProductDescription>{props.description}</ProductDescription>
       </InfoContainer>
-      <a href={props.shopURL}>
+      <a href={props.url}>
         <Button>Shop</Button>
       </a>
     </ProductDetailWrapper>
