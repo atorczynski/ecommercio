@@ -19,13 +19,5 @@ export default function ProductDetails({ match }) {
 
   console.log(product);
 
-  return (
-    <ProductDetail
-      imgSrc={product.img}
-      productTitle={product.title}
-      productPrice={product.price}
-      productDescription={product.description}
-      shopURL={product.url}
-    />
-  );
+  return <ProductDetail {...product} />;
 }
