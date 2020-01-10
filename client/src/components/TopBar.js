@@ -40,7 +40,7 @@ export default function TopBar() {
           setOpenMenu(!openMenu);
         }}
       />
-      <Menu open={openMenu} />
+      <Menu open={openMenu} onClick={() => setOpenMenu()} />
       <LogoWrapper>
         <Link to={'/home'}>
           <LogoTopBar src={Logo} />
