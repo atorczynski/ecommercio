@@ -22,6 +22,7 @@ const Wrapper = styled.div`
 export default function Products() {
   const [products, setProducts] = React.useState(null);
   const [search, setSearch] = React.useState('');
+  const [reload, setReaload] = React.useState(false);
 
   function deleteProduct(id) {
     try {
@@ -46,6 +47,10 @@ export default function Products() {
   React.useEffect(() => {
     getData();
   }, []);
+  React.useEffect(() => {
+    getData();
+    setReaload(false);
+  }, [reload]);
 
   React.useEffect(() => {
     if (products) {
@@ -71,8 +76,14 @@ export default function Products() {
           <ProductElement
             key={product._id}
             {...product}
-            onClickDelete={() => deleteProduct(product._id)}
-            onClickRefresh={() => updateProduct(product.url, product._id)}
+            onClickDelete={() => {
+              deleteProduct(product._id);
+              setReaload(true);
+            }}
+            onClickRefresh={() => {
+              updateProduct(product.url, product._id);
+              setReaload(true);
+            }}
           />
         ))}
     </Wrapper>
