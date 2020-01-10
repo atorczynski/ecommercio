@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import Button from './Button';
 
 const ProductDetailWrapper = styled.div`
   display: flex;

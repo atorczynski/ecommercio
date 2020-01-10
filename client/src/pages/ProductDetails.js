@@ -4,10 +4,6 @@ import ProductDetail from '../components/ProductDetail';
 import axios from 'axios';
 import Button from '../components/Button';
 
-const linkButton = styled(Button)`
-  align-self: center;
-`;
-
 function incrementRef(id) {
   axios.put('/api/increment/products/' + id);
 }
