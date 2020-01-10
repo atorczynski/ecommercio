@@ -1,5 +1,4 @@
 import React from 'react';
-import styled from '@emotion/styled';
 import ProductDetail from '../components/ProductDetail';
 import axios from 'axios';
 import Button from '../components/Button';
