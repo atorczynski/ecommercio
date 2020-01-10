@@ -4,13 +4,18 @@ const crawler = require('../lib/controllers/shopware/pageCrawler');
 const pageCrawler = require('../lib/controllers/shopware/singlePageCrawler');
 const Products = require('../schemas/productSchema');
 
-router.get('/merchantproducts/:id', async (req, res) => {
-  const id = req.params.id;
-  const products = await Products.findById(id);
-  res.send(products);
+router.get('/products/:id', async (req, res) => {
+  try {
+    const id = req.params.id;
+    const products = await Products.findById(id);
+    res.send(products);
+  } catch (error) {
+    console.error(error);
+    res.end();
+  }
 });
 
-router.delete('/merchantproducts/:id', async (req, res) => {
+router.delete('/products/:id', async (req, res) => {
   try {
     const id = req.params.id;
     const deleted = await Products.findByIdAndDelete(id);
@@ -18,17 +23,34 @@ router.delete('/merchantproducts/:id', async (req, res) => {
     res.send(deleted);
   } catch (error) {
     console.error(error);
+    res.end();
   }
 });
 
-router.post('/merchantproducts', (req, res) => {
-  const baseURL = req.body.params.baseURL;
-
-  crawler.scrapeURL(baseURL, []);
-  res.end();
+router.post('/products', (req, res) => {
+  try {
+    const baseURL = req.body.params.baseURL;
+    crawler.scrapeURL(baseURL, []);
+    res.end();
+  } catch (error) {
+    console.error(error);
+    res.end();
+  }
 });
 
-router.put('/merchantproducts', async (req, res) => {
+router.put('/increment/:id', async (req, res) => {
+  try {
+    const id = req.params.id;
+    console.log(req);
+    // console.log(id);
+    await Products.findByIdAndUpdate(id, { $inc: { referrals: 1 } });
+    res.send('Successfully incremented ' + id);
+  } catch (error) {
+    console.error(error);
+    res.send().status(401);
+  }
+});
+router.put('/products', async (req, res) => {
   try {
     console.log(req);
     const url = req.body.params.url;
@@ -38,19 +60,24 @@ router.put('/merchantproducts', async (req, res) => {
     res.end();
   } catch (error) {
     console.error(error);
+    res.end();
   }
 });
 
-router.get('/merchantproducts', async (req, res) => {
-  const { q } = req.query;
-
-  const query = q
-    ? {
-        title: { $regex: '.*' + q + '.*', $options: 'i' }
-      }
-    : {};
-  const products = await Products.find(query);
-  res.send(products);
+router.get('/products', async (req, res) => {
+  try {
+    const { q } = req.query;
+    const query = q
+      ? {
+          title: { $regex: '.*' + q + '.*', $options: 'i' }
+        }
+      : {};
+    const products = await Products.find(query);
+    res.send(products);
+  } catch (error) {
+    console.error(error);
+    res.end();
+  }
 });
 
 module.exports = router;

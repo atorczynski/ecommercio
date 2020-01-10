@@ -1,6 +1,16 @@
 import React from 'react';
+import styled from '@emotion/styled';
 import ProductDetail from '../components/ProductDetail';
 import axios from 'axios';
+import Button from '../components/Button';
+
+const linkButton = styled(Button)`
+  align-self: center;
+`;
+
+function incrementRef(id) {
+  axios.put('/api/increment/products/' + id);
+}
 
 export default function ProductDetails({ match }) {
   const [product, setProduct] = React.useState({});
@@ -8,7 +18,7 @@ export default function ProductDetails({ match }) {
   React.useEffect(() => {
     async function getDetails() {
       try {
-        const response = await axios.get('/api/merchantproducts/' + match.params.id);
+        const response = await axios.get('/api/products/' + match.params.id);
         setProduct(response.data);
       } catch (error) {
         console.log(error);
@@ -19,5 +29,12 @@ export default function ProductDetails({ match }) {
 
   console.log(product);
 
-  return <ProductDetail {...product} />;
+  return (
+    <>
+      <ProductDetail {...product} />
+      <a href={product.url}>
+        <Button onClick={() => incrementRef(product._id)}>Shop</Button>
+      </a>
+    </>
+  );
 }
