@@ -1,19 +1,12 @@
 import React from 'react';
 import styled from '@emotion/styled';
+import Seperator from './Seperator';
 
 const OverviewWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: space-around;
-`;
-
-const Seperator = styled.hr`
-  width: 273px;
-  height: 0px;
-  background: transparent;
-  border: 1px solid #ed462e;
-  opacity: 0.17;
+  margin-left: 100px;
 `;
 
 const OverviewHeading = styled.h2`
@@ -35,11 +28,12 @@ const OverviewText = styled.p`
 export default function OverView(props) {
   return (
     <OverviewWrapper>
-      <Seperator />
       <OverviewHeading>Overview</OverviewHeading>
-      <OverviewText>Current Product Count: {props.productCount}</OverviewText>
-      <OverviewText>Total Referrals: {props.totalRefCount}</OverviewText>
+      <OverviewText>Current Product Count: {props.count}</OverviewText>
+      <OverviewText>Total Referrals: {props.referralsCount}</OverviewText>
       <OverviewText>Referrals last 7d: {props.refsLastWeek}</OverviewText>
+      <OverviewText>Last Crawled Product: {props.lastProductCrawled}</OverviewText>
+      <OverviewText>Last Full Crawler Run: {props.lastCrawlerRun}</OverviewText>
     </OverviewWrapper>
   );
 }

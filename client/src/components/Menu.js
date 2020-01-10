@@ -40,19 +40,19 @@ export default function Menu(props) {
   return (
     <StyledMenu open={props.open}>
       <Seperator />
-      <Link to={'/home'}>
+      <Link to={'/home'} onClick={props.onClick}>
         <p>Home</p>
       </Link>
-      <Link to={'/import'}>
+      <Link to={'/import'} onClick={props.onClick}>
         <p>Import</p>
       </Link>
-      <Link to={'/products'}>
+      <Link to={'/products'} onClick={props.onClick}>
         <p>Products</p>
       </Link>
-      <Link to={'/billing'}>
+      <Link to={'/billing'} onClick={props.onClick}>
         <p>Billing</p>
       </Link>
-      <Link to={'/settings'}>
+      <Link to={'/settings'} onClick={props.onClick}>
         <p>Settings</p>
       </Link>
     </StyledMenu>
