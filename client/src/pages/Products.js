@@ -22,35 +22,30 @@ const Wrapper = styled.div`
 export default function Products() {
   const [products, setProducts] = React.useState(null);
   const [search, setSearch] = React.useState('');
-  const [reload, setReaload] = React.useState(false);
 
   function deleteProduct(id) {
     try {
-      axios.delete('/api/merchantproducts/' + id);
+      axios.delete('/api/products/' + id);
     } catch (error) {
       console.error(error);
     }
   }
   function updateProduct(url, id) {
     try {
-      axios.put('/api/merchantproducts/', { params: { url: url, id: id } });
+      axios.put('/api/products/', { params: { url: url, id: id } });
     } catch (error) {
       console.error(error);
     }
   }
 
   async function getData() {
-    const response = await axios.get(`/api/merchantproducts?q=${search}`);
+    const response = await axios.get(`/api/products?q=${search}`);
     setProducts(response.data);
   }
 
   React.useEffect(() => {
     getData();
   }, []);
-  React.useEffect(() => {
-    getData();
-    setReaload(false);
-  }, [reload]);
 
   React.useEffect(() => {
     if (products) {
@@ -78,11 +73,11 @@ export default function Products() {
             {...product}
             onClickDelete={() => {
               deleteProduct(product._id);
-              setReaload(true);
+              getData();
             }}
             onClickRefresh={() => {
               updateProduct(product.url, product._id);
-              setReaload(true);
+              getData();
             }}
           />
         ))}
