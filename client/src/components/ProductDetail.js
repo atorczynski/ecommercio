@@ -74,9 +74,6 @@ export default function ProductDetail(props) {
         <InfoText>Description:</InfoText>
         <ProductDescription>{props.description}</ProductDescription>
       </InfoContainer>
-      <a href={props.url}>
-        <Button>Shop</Button>
-      </a>
     </ProductDetailWrapper>
   );
 }
