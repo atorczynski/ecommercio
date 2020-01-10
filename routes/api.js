@@ -11,6 +11,7 @@ router.get('/products/:id', async (req, res) => {
     res.send(products);
   } catch (error) {
     console.error(error);
+    res.status(404);
     res.end();
   }
 });
@@ -23,6 +24,7 @@ router.delete('/products/:id', async (req, res) => {
     res.send(deleted);
   } catch (error) {
     console.error(error);
+    res.status(404);
     res.end();
   }
 });
@@ -34,6 +36,7 @@ router.post('/products', (req, res) => {
     res.end();
   } catch (error) {
     console.error(error);
+    res.status(400);
     res.end();
   }
 });
@@ -41,13 +44,12 @@ router.post('/products', (req, res) => {
 router.put('/increment/:id', async (req, res) => {
   try {
     const id = req.params.id;
-    console.log(req);
-    // console.log(id);
     await Products.findByIdAndUpdate(id, { $inc: { referrals: 1 } });
     res.send('Successfully incremented ' + id);
   } catch (error) {
     console.error(error);
-    res.send().status(401);
+    res.status(400);
+    res.end();
   }
 });
 router.put('/products', async (req, res) => {
@@ -60,6 +62,7 @@ router.put('/products', async (req, res) => {
     res.end();
   } catch (error) {
     console.error(error);
+    res.status(400);
     res.end();
   }
 });
@@ -76,6 +79,7 @@ router.get('/products', async (req, res) => {
     res.send(products);
   } catch (error) {
     console.error(error);
+    res.status(404);
     res.end();
   }
 });
