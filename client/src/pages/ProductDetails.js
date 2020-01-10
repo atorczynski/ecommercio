@@ -4,11 +4,12 @@ import axios from 'axios';
 import Button from '../components/Button';
 
 function incrementRef(id) {
-  axios.put('/api/increment/products/' + id);
+  axios.put('/api/increment/' + id);
 }
 
 export default function ProductDetails({ match }) {
   const [product, setProduct] = React.useState({});
+  const [isActive, setActive] = React.useState(false);
 
   React.useEffect(() => {
     async function getDetails() {
@@ -28,7 +29,11 @@ export default function ProductDetails({ match }) {
     <>
       <ProductDetail {...product} />
       <a href={product.url}>
-        <Button onClick={() => incrementRef(product._id)}>Shop</Button>
+        <Button
+          onClick={() => (isActive ? true : incrementRef(product._id) ? isActive : setActive(true))}
+        >
+          Shop
+        </Button>
       </a>
     </>
   );
