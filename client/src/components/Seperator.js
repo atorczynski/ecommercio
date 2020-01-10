@@ -6,7 +6,6 @@ const Seperator = styled.hr`
   margin-top: 15px;
   border: 1px solid #ed462e;
   font-family: 'Roboto';
-  margin-top: 35px;
   opacity: 0.3;
 `;
 
