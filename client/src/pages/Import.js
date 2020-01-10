@@ -5,9 +5,8 @@ import axios from 'axios';
 export default function Import() {
   const [value, setValue] = React.useState('');
 
-
   function sendReq(baseURLValue) {
-    axios.post('/api/merchantproducts', { params: { baseURL: baseURLValue } });
+    axios.post('/api/products', { params: { baseURL: baseURLValue } });
   }
   return (
     <>
