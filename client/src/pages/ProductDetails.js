@@ -9,7 +9,7 @@ function incrementRef(id) {
 
 export default function ProductDetails({ match }) {
   const [product, setProduct] = React.useState({});
-  const [isActive, setActive] = React.useState(false);
+  const [isActive, setActive] = React.useState(true);
 
   React.useEffect(() => {
     async function getDetails() {
@@ -30,7 +30,9 @@ export default function ProductDetails({ match }) {
       <ProductDetail {...product} />
       <a href={product.url}>
         <Button
-          onClick={() => (isActive ? true : incrementRef(product._id) ? isActive : setActive(true))}
+          onClick={() =>
+            isActive ? true : incrementRef(product._id) ? isActive : setActive(false)
+          }
         >
           Shop
         </Button>
