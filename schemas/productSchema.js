@@ -4,11 +4,13 @@ const Schema = mongoose.Schema;
 const ProductSchema = new Schema({
   url: {
     type: String,
-    required: true
+    required: true,
+    unique: true
   },
   title: {
     type: String,
-    required: true
+    required: true,
+    index: true
   },
   img: {
     type: String,

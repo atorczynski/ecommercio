@@ -10,7 +10,7 @@ function sumByKey(items, key) {
 export default function Main() {
   const [products, setProducts] = React.useState([]);
   async function getData() {
-    const response = await axios.get(`/api/merchantproducts`);
+    const response = await axios.get(`/api/products`);
     setProducts(response.data);
   }
 

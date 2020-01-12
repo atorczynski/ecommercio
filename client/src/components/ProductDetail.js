@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import Button from './Button';
 
 const ProductDetailWrapper = styled.div`
   display: flex;
@@ -74,9 +73,6 @@ export default function ProductDetail(props) {
         <InfoText>Description:</InfoText>
         <ProductDescription>{props.description}</ProductDescription>
       </InfoContainer>
-      <a href={props.url}>
-        <Button>Shop</Button>
-      </a>
     </ProductDetailWrapper>
   );
 }
