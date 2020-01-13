@@ -32,6 +32,7 @@ router.delete('/products/:id', async (req, res) => {
 router.post('/products', (req, res) => {
   try {
     const baseURL = req.body.params.baseURL;
+
     crawler.scrapeURL(baseURL, []);
     res.end();
   } catch (error) {
