@@ -9,6 +9,8 @@ const port = 8080;
 app.use(morgan('tiny'));
 app.use(express.json());
 
+app.use('/api', apiRoutes);
+
 // Serve any static files
 app.use(express.static(path.join(__dirname, 'client/build')));
 
@@ -16,8 +18,6 @@ app.use(express.static(path.join(__dirname, 'client/build')));
 app.get('*', function(req, res) {
   res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
 });
-
-app.use('/api', apiRoutes);
 
 mongoose
   .connect('mongodb://127.0.0.1:27017/', {
