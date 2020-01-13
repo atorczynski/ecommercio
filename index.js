@@ -1,5 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const path = require('path');
 const morgan = require('morgan');
 const app = express();
 const apiRoutes = require('./routes/api');
@@ -7,6 +8,14 @@ const port = 8080;
 
 app.use(morgan('tiny'));
 app.use(express.json());
+
+// Serve any static files
+app.use(express.static(path.join(__dirname, 'client/build')));
+
+// Handle React routing, return all requests to React app
+app.get('*', function(req, res) {
+  res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
+});
 
 app.use('/api', apiRoutes);
 
