@@ -1,5 +1,4 @@
 const express = require('express');
-require('dotenv').config();
 const mongoose = require('mongoose');
 const path = require('path');
 const morgan = require('morgan');
@@ -21,7 +20,7 @@ app.get('*', function(req, res) {
 });
 
 mongoose
-  .connect(port, {
+  .connect('mongodb://127.0.0.1:27017/', {
     useUnifiedTopology: true,
     useNewUrlParser: true,
     useCreateIndex: true,
