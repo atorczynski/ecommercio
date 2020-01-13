@@ -19,7 +19,6 @@ export default function Main() {
   }, []);
 
   // console.log(sumByKey(products, 'referrals'));
-  console.log(products[1]);
 
   return (
     <div>

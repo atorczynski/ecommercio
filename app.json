@@ -1,0 +1,24 @@
+{
+  "name": "ecommercio",
+  "scripts": {},
+  "env": {
+    "MONGO_URL": {
+      "required": false
+    },
+    "DB_NAME": {
+      "required": false
+    }
+  },
+  "formation": {
+    "web": {
+      "quantity": 1
+    }
+  },
+  "addons": [],
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    }
+  ],
+  "stack": "heroku-18"
+}
