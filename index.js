@@ -20,7 +20,7 @@ app.get('*', function(req, res) {
 });
 
 mongoose
-  .connect('mongodb://127.0.0.1:27017/', {
+  .connect(process.env.MONGO_URL, {
     useUnifiedTopology: true,
     useNewUrlParser: true,
     useCreateIndex: true,
