@@ -3,10 +3,10 @@
   "scripts": {},
   "env": {
     "MONGO_URL": {
-      "required": true
+      "required": false
     },
     "DB_NAME": {
-      "required": true
+      "required": false
     }
   },
   "formation": {
