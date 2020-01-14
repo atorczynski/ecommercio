@@ -30,10 +30,18 @@ router.delete('/products/:id', async (req, res) => {
 });
 
 router.post('/products', (req, res) => {
+  function getBaseUrl(baseUrl) {
+    const pathArray = baseUrl.split('/');
+    const protocol = pathArray[0];
+    const host = pathArray[2];
+    baseUrl = protocol + '//' + host;
+    console.log(baseUrl);
+    return baseUrl;
+  }
   try {
     const baseURL = req.body.params.baseURL;
 
-    crawler.scrapeURL(baseURL, []);
+    crawler.scrapeURL(baseURL, [], getBaseUrl(baseURL));
     res.end();
   } catch (error) {
     console.error(error);

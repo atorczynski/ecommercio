@@ -10,6 +10,7 @@ const ProductSchema = new Schema({
   title: {
     type: String,
     required: true,
+    unique: true,
     index: true
   },
   img: {
@@ -31,8 +32,7 @@ const ProductSchema = new Schema({
     default: 'No description provided'
   },
   crawledAt: {
-    type: Date,
-    default: Date.now()
+    type: Date
   }
 });
 
