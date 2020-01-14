@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import Seperator from './Seperator';
 
 const OverviewWrapper = styled.div`
   display: flex;
@@ -31,9 +30,6 @@ export default function OverView(props) {
       <OverviewHeading>Overview</OverviewHeading>
       <OverviewText>Current Product Count: {props.count}</OverviewText>
       <OverviewText>Total Referrals: {props.referralsCount}</OverviewText>
-      <OverviewText>Referrals last 7d: {props.refsLastWeek}</OverviewText>
-      <OverviewText>Last Crawled Product: {props.lastProductCrawled}</OverviewText>
-      <OverviewText>Last Full Crawler Run: {props.lastCrawlerRun}</OverviewText>
     </OverviewWrapper>
   );
 }

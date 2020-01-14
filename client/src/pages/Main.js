@@ -18,8 +18,6 @@ export default function Main() {
     getData();
   }, []);
 
-  // console.log(sumByKey(products, 'referrals'));
-
   return (
     <div>
       <OverView count={products.length} referralsCount={sumByKey(products, 'referrals')} />

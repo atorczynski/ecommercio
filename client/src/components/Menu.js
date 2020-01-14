@@ -49,12 +49,6 @@ export default function Menu(props) {
       <Link to={'/products'} onClick={props.onClick}>
         <p>Products</p>
       </Link>
-      <Link to={'/billing'} onClick={props.onClick}>
-        <p>Billing</p>
-      </Link>
-      <Link to={'/settings'} onClick={props.onClick}>
-        <p>Settings</p>
-      </Link>
     </StyledMenu>
   );
 }
