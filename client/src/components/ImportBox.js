@@ -2,6 +2,7 @@ import React from 'react';
 import styled from '@emotion/styled';
 import ImportWelcome from './ImportWelcome';
 import Button from './Button';
+import { Link } from 'react-router-dom';
 
 const Wrapper = styled.div`
   display: flex;
@@ -38,7 +39,6 @@ const Input = styled.input`
   background: #efefef;
 `;
 
-
 export default function InputBar(props) {
   return (
     <Wrapper>
@@ -52,7 +52,9 @@ export default function InputBar(props) {
           placeholder={props.placeholder}
         />
       </InputWrapper>
-      <Button onClick={props.onClick}>Import</Button>
+      <Link to={props.redirect}>
+        <Button onClick={props.onClick}>Import</Button>
+      </Link>
     </Wrapper>
   );
 }
