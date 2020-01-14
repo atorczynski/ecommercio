@@ -1,5 +1,4 @@
 import React from 'react';
-import { toast } from 'react-toastify';
 import { errorNotification, importNotification } from '../lib/notifications';
 import 'react-toastify/dist/ReactToastify.css';
 import ImportBox from '../components/ImportBox';
