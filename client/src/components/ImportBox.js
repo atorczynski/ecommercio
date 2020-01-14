@@ -2,7 +2,6 @@ import React from 'react';
 import styled from '@emotion/styled';
 import ImportWelcome from './ImportWelcome';
 import Button from './Button';
-import { Link } from 'react-router-dom';
 
 const Wrapper = styled.div`
   display: flex;
@@ -52,9 +51,7 @@ export default function InputBar(props) {
           placeholder={props.placeholder}
         />
       </InputWrapper>
-      <Link to={props.redirect}>
         <Button onClick={props.onClick}>Import</Button>
-      </Link>
     </Wrapper>
   );
 }

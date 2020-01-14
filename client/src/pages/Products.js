@@ -1,5 +1,7 @@
 import React from 'react';
 import SearchBar from '../components/SearchBar';
+import { deleteNotification, refreshNotification } from '../lib/notifications';
+import 'react-toastify/dist/ReactToastify.css';
 import ProductElement from '../components/ProductElement';
 import styled from '@emotion/styled';
 import axios from 'axios';
@@ -74,10 +76,12 @@ export default function Products() {
             onClickDelete={() => {
               deleteProduct(product._id);
               getData();
+              deleteNotification('Product Deleted');
             }}
             onClickRefresh={() => {
               updateProduct(product.url, product._id);
               getData();
+              refreshNotification('Product Refreshed');
             }}
           />
         ))}
