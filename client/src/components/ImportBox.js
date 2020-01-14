@@ -38,7 +38,6 @@ const Input = styled.input`
   background: #efefef;
 `;
 
-
 export default function InputBar(props) {
   return (
     <Wrapper>
@@ -52,7 +51,7 @@ export default function InputBar(props) {
           placeholder={props.placeholder}
         />
       </InputWrapper>
-      <Button onClick={props.onClick}>Import</Button>
+        <Button onClick={props.onClick}>Import</Button>
     </Wrapper>
   );
 }

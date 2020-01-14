@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import LoginPage from './pages/Login';
+import { ToastContainer } from 'react-toastify';
 import { ThemeProvider } from 'emotion-theming';
 import GlobalStyles from './GlobalStyles';
 import light from './themes/defaultTheme';
@@ -36,6 +37,7 @@ function App() {
           </Route>
         </Switch>
       </Router>
+      <ToastContainer />
     </ThemeProvider>
   );
 }
