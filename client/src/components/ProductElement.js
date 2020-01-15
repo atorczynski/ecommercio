@@ -15,7 +15,6 @@ const Wrapper = styled.div`
 
 const ProductWrapper = styled.div`
   display: flex;
-  z-index: -100;
   flex-direction: row;
   width: 95%;
   height: 150px;
@@ -85,7 +84,6 @@ const FunctionButton = styled(Button)`
 
 const Seperator = styled.hr`
   width: 220px;
-  z-index: 10;
   height: 0px;
   margin-top: 15px;
   border: 1px solid #ed462e;
@@ -129,10 +127,8 @@ export default function ProductElement(props) {
 }
 
 ProductElement.propTypes = {
-  _id: PropTypes.number.isRequired,
+  _id: PropTypes.string.isRequired,
   title: PropTypes.string,
-  referrals: PropTypes.string,
-  price: PropTypes.string,
-  onClickRefresh: PropTypes.func,
-  onClickDelete: PropTypes.func
+  referrals: PropTypes.number,
+  price: PropTypes.string
 };
