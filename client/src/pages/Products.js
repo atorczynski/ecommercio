@@ -1,7 +1,9 @@
 import React from 'react';
 import SearchBar from '../components/SearchBar';
+import { css } from '@emotion/core';
 import { deleteNotification, refreshNotification } from '../lib/notifications';
 import 'react-toastify/dist/ReactToastify.css';
+import PulseLoader from 'react-spinners/PulseLoader';
 import ProductElement from '../components/ProductElement';
 import styled from '@emotion/styled';
 import axios from 'axios';
@@ -20,10 +22,15 @@ const Wrapper = styled.div`
   align-items: center;
   margin-top: 40px;
 `;
+const override = css`
+  display: block;
+  margin: 100px 0 0 0;
+`;
 
 export default function Products() {
   const [products, setProducts] = React.useState(null);
   const [search, setSearch] = React.useState('');
+  const [loading, setLoading] = React.useState(true);
 
   function deleteProduct(id) {
     try {
@@ -41,8 +48,15 @@ export default function Products() {
   }
 
   async function getData() {
-    const response = await axios.get(`/api/products?q=${search}`);
-    setProducts(response.data);
+    try {
+      setLoading(true);
+      const response = await axios.get(`/api/products?q=${search}`);
+      setProducts(response.data);
+    } catch (error) {
+      console.error(error);
+    } finally {
+      setLoading(false);
+    }
   }
 
   React.useEffect(() => {
@@ -68,6 +82,15 @@ export default function Products() {
           onChange={event => setSearch(event.target.value)}
         />
       </InputWrapper>
+      {loading && (
+        <PulseLoader
+          css={override}
+          size={15}
+          margin={25}
+          //size={"150px"} this also works
+          color={'#ED462E'}
+        />
+      )}
       {products &&
         products.map(product => (
           <ProductElement
