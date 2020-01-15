@@ -1,7 +1,7 @@
 import React from 'react';
 import { withKnobs, text } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
-import ImportBox from '../components/ImportBox';
+import ImportBox from '../components/import/ImportBox';
 
 export default {
   title: 'Import',

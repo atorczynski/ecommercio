@@ -1,10 +1,10 @@
 import React from 'react';
-import SearchBar from '../components/SearchBar';
+import SearchBar from '../components/general/SearchBar';
 import { css } from '@emotion/core';
 import { deleteNotification, refreshNotification } from '../lib/notifications';
 import 'react-toastify/dist/ReactToastify.css';
 import PulseLoader from 'react-spinners/PulseLoader';
-import ProductElement from '../components/ProductElement';
+import ProductElement from '../components/product/ProductElement';
 import styled from '@emotion/styled';
 import axios from 'axios';
 

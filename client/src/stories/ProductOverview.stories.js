@@ -1,6 +1,6 @@
 import React from 'react';
-import ProductElement from '../components/ProductElement';
-import ProductDetails from '../components/ProductDetail';
+import ProductElement from '../components/product/ProductElement';
+import ProductDetails from '../components/product/ProductDetail';
 import { action } from '@storybook/addon-actions';
 import { withKnobs, text, number } from '@storybook/addon-knobs';
 

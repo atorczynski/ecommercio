@@ -1,7 +1,7 @@
 import React from 'react';
-import ProductDetail from '../components/ProductDetail';
+import ProductDetail from '../components/product/ProductDetail';
 import axios from 'axios';
-import Button from '../components/Button';
+import Button from '../components/general/Button';
 
 function incrementRef(id) {
   axios.put('/api/increment/' + id);

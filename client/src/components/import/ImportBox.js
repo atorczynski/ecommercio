@@ -2,7 +2,7 @@ import React from 'react';
 import styled from '@emotion/styled';
 import ImportWelcome from './ImportWelcome';
 import PropTypes from 'prop-types';
-import Button from './Button';
+import Button from '../general/Button';
 
 const Wrapper = styled.div`
   display: flex;
