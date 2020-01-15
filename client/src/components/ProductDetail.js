@@ -47,7 +47,7 @@ const ProductPrice = styled.h3`
   font-family: 'Roboto Condensed', sans-serif;
   font-weight: normal;
   text-align: left;
-  color: #232629;
+  color: ${props => props.theme.color.producttext};
 `;
 const InfoText = styled.p`
   margin-bottom: -10px;
@@ -56,7 +56,7 @@ const InfoText = styled.p`
 `;
 
 const ProductDescription = styled.p`
-  color: #232629;
+  color: ${props => props.theme.color.producttext};
   font-size: 11px;
 `;
 

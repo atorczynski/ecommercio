@@ -5,7 +5,7 @@ const MenuButton = styled.button`
   height: 30px;
   margin: 20px;
   border-radius: 15px;
-  background: #f4f4f4;
+  background: ${props => props.theme.color.secondary};
   border: 1px solid #ed462e;
   outline: none;
   box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);

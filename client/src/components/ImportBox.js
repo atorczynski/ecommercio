@@ -21,6 +21,7 @@ const InputWrapper = styled.div`
 `;
 const Arrow = styled.i`
   border: solid black;
+  z-index: -1;
   border-width: 0 3px 3px 0;
   margin-right: 15px;
   display: inline-block;
@@ -35,7 +36,7 @@ const Input = styled.input`
   margin: 0;
   border-bottom: 1px solid rgba(211, 211, 211, 1);
   width: 250px;
-  background: #efefef;
+  background: ${props => props.theme.color.background};
 `;
 
 export default function InputBar(props) {
@@ -51,7 +52,7 @@ export default function InputBar(props) {
           placeholder={props.placeholder}
         />
       </InputWrapper>
-        <Button onClick={props.onClick}>Import</Button>
+      <Button onClick={props.onClick}>Import</Button>
     </Wrapper>
   );
 }

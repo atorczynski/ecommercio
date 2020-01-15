@@ -10,8 +10,8 @@ const BottomNavigation = styled.nav`
   align-items: center;
   width: 100%;
   height: 70px;
-  background: #efefef;
-  border: 1px solid #707070;
+  background: ${props => props.theme.color.background};
+  border: 1px solid ${props => props.theme.color.primary};
   box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
   overflow: hidden;
   position: fixed;
@@ -26,7 +26,7 @@ const Icon = styled.img`
 
 const NavButton = styled.button`
   background: none;
-  color: #707070;
+  color: ${props => props.theme.color.primary};
   border: none;
   padding: 0;
   outline: inherit;

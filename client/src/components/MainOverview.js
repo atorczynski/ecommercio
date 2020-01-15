@@ -13,7 +13,7 @@ const OverviewHeading = styled.h2`
   font-weight: normal;
   font-size: 18px;
   text-align: left;
-  color: #707070;
+  color: ${props => props.theme.color.primary};
 `;
 
 const OverviewText = styled.p`
@@ -21,7 +21,7 @@ const OverviewText = styled.p`
   font-weight: normal;
   font-size: 12px;
   text-align: left;
-  color: #707070;
+  color: ${props => props.theme.color.primary};
 `;
 
 export default function OverView(props) {

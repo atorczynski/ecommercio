@@ -7,7 +7,7 @@ const Button = styled.button`
   border-radius: 12.5px;
   border: none;
   outline: none;
-  background: ${props => props.theme.color.buttoncolor};
+  background: ${props => props.theme.color.actioncolor};
   box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
   font-weight: normal;
   font-size: 15px;
