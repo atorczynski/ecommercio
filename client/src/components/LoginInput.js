@@ -18,13 +18,13 @@ const UserLoginName = styled.input`
   border: none;
   border-bottom: 1px solid rgba(211, 211, 211, 1);
   width: 200px;
-  background: #efefef;
+  background: ${props => props.theme.color.background};
 `;
 const UserLoginPassword = styled.input`
   border: none;
   border-bottom: 1px solid rgba(211, 211, 211, 1);
   width: 200px;
-  background: #efefef;
+  background: ${props => props.theme.color.background};
 `;
 
 export default function Login(props) {

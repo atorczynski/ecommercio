@@ -3,7 +3,8 @@ const light = {
     background: '#EFEFEF',
     primary: '#707070',
     secondary: '#F4F4F4',
-    buttoncolor: '#ED462E'
+    actioncolor: '#ED462E',
+    producttext: '#232629'
   }
 };
 

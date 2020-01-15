@@ -29,17 +29,10 @@ export const StyledMenu = styled.nav`
     transition: color 0.3s linear;
   }
 `;
-const Seperator = styled.hr`
-  width: 273px;
-  height: 0px;
-  border: 1px solid #707070;
-  opacity: 0.17;
-`;
 
 export default function Menu(props) {
   return (
     <StyledMenu open={props.open}>
-      <Seperator />
       <Link to={'/home'} onClick={props.onClick}>
         <p>Home</p>
       </Link>
