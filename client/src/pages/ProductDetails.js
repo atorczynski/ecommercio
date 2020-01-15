@@ -23,8 +23,6 @@ export default function ProductDetails({ match }) {
     getDetails();
   }, []);
 
-  console.log(product);
-
   return (
     <>
       <ProductDetail {...product} />
