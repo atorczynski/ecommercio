@@ -31,7 +31,7 @@ export function ProductDetail() {
         'https://www.tryandreview.com/uploads/images/products/1d846ebd5706b2b549e2929d8074599124c3b1b8.png?v17'
       }
       title={text('Product Name', 'Nivea MicellAIR Skin Professsional')}
-      price={5.99}
+      price={'5.99'}
       productBrand={'Nivea'}
       description={text(
         'Description Text',

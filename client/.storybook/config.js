@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
 import { configure, addDecorator } from '@storybook/react';
 import GlobalStyles from '../src/GlobalStyles';
 import { ThemeProvider } from 'emotion-theming';

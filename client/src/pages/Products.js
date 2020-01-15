@@ -73,8 +73,8 @@ export default function Products() {
           <ProductElement
             key={product._id}
             {...product}
-            onClickDelete={async () => {
-              await deleteProduct(product._id);
+            onClickDelete={() => {
+              deleteProduct(product._id);
               setTimeout(() => {
                 getData();
               }, 500);

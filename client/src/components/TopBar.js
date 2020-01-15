@@ -50,7 +50,3 @@ export default function TopBar() {
     </AppBar>
   );
 }
-
-TopBar.propTypes = {
-  openMenu: PropTypes.bool
-};
