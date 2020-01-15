@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import ImportWelcome from './ImportWelcome';
+import PropTypes from 'prop-types';
 import Button from './Button';
 
 const Wrapper = styled.div`
@@ -56,3 +57,10 @@ export default function InputBar(props) {
     </Wrapper>
   );
 }
+
+InputBar.propTypes = {
+  onChange: PropTypes.func,
+  onClick: PropTypes.func,
+  value: PropTypes.string,
+  placeholder: PropTypes.string
+};

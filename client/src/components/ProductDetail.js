@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from '@emotion/styled';
 
 const ProductDetailWrapper = styled.div`
@@ -76,3 +77,10 @@ export default function ProductDetail(props) {
     </ProductDetailWrapper>
   );
 }
+
+ProductDetail.propTypes = {
+  img: PropTypes.string,
+  title: PropTypes.string,
+  price: PropTypes.string,
+  description: PropTypes.string
+};

@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 export const StyledMenu = styled.nav`
@@ -45,3 +46,7 @@ export default function Menu(props) {
     </StyledMenu>
   );
 }
+
+Menu.propTypes = {
+  onClick: PropTypes.func
+};
