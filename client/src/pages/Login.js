@@ -1,6 +1,6 @@
 import React from 'react';
 import LoginInput from '../components/LoginInput';
-import RegisterQuestion from '../components/RegisterQuestion';
+import RegisterQuestion from '../components/general/RegisterQuestion';
 
 function LoginPage() {
   function handleLogin() {

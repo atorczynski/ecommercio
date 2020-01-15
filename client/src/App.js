@@ -7,7 +7,7 @@ import GlobalStyles from './GlobalStyles';
 import light from './themes/defaultTheme';
 import Main from './pages/Main';
 import Import from './pages/Import';
-import TopBar from './components/TopBar';
+import TopBar from './components/menu/TopBar';
 import Products from './pages/Products';
 import Register from './pages/Register';
 import ProductDetails from './pages/ProductDetails';

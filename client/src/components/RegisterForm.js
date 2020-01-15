@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import Button from './Button';
+import Button from './general/Button';
 
 const RegisterWrapper = styled.div`
   display: flex;

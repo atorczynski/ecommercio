@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import PropTypes from 'prop-types';
-import Button from './Button';
+import Button from './general/Button';
 import { Link } from 'react-router-dom';
 
 const LoginBox = styled.div`

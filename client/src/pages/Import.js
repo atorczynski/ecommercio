@@ -1,7 +1,7 @@
 import React from 'react';
 import { errorNotification, importNotification } from '../lib/notifications';
 import 'react-toastify/dist/ReactToastify.css';
-import ImportBox from '../components/ImportBox';
+import ImportBox from '../components/import/ImportBox';
 import axios from 'axios';
 import { useHistory } from 'react-router-dom';
 
