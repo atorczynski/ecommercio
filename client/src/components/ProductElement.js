@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled';
+import PropTypes from 'prop-types';
 import Button from './Button';
 import { Link } from 'react-router-dom';
 
@@ -124,3 +125,10 @@ export default function ProductElement(props) {
     </Wrapper>
   );
 }
+
+ProductElement.propTypes = {
+  _id: PropTypes.string.isRequired,
+  title: PropTypes.string,
+  referrals: PropTypes.number,
+  price: PropTypes.string
+};

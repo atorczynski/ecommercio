@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 export const StyledMenu = styled.nav`
@@ -7,6 +8,7 @@ export const StyledMenu = styled.nav`
   flex-direction: column;
   justify-content: center;
   background: grey;
+  z-index: 5;
   height: 100vh;
   width: 100%;
   text-align: left;
@@ -45,3 +47,7 @@ export default function Menu(props) {
     </StyledMenu>
   );
 }
+
+Menu.propTypes = {
+  onClick: PropTypes.func
+};

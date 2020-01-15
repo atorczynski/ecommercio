@@ -1,4 +1,5 @@
 import React from 'react';
+import { BrowserRouter as Router } from 'react-router-dom';
 import { configure, addDecorator } from '@storybook/react';
 import GlobalStyles from '../src/GlobalStyles';
 import { ThemeProvider } from 'emotion-theming';
@@ -8,7 +9,7 @@ import light from '../src/themes/defaultTheme';
 const GlobalStyleDecorator = storyFn => (
   <ThemeProvider theme={light}>
     <GlobalStyles />
-    {storyFn()}
+    <Router>{storyFn()}</Router>
   </ThemeProvider>
 );
 addDecorator(GlobalStyleDecorator);

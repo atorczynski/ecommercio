@@ -9,7 +9,7 @@ export default function Import() {
   const [value, setValue] = React.useState('');
   const history = useHistory();
 
-  function sendReq(baseURLValue) {
+  function sendURLRequest(baseURLValue) {
     axios.post('/api/products', { params: { baseURL: baseURLValue } });
   }
 
@@ -18,7 +18,7 @@ export default function Import() {
       errorNotification('No URL Provided');
       console.log('hi');
     } else {
-      sendReq(value);
+      sendURLRequest(value);
       importNotification('Import Started');
       history.push('/products');
     }

@@ -10,17 +10,14 @@ export default {
 };
 
 export function MainMenuButton() {
-  return (
-    <MenuButton onClick={action('clicked')} buttontext={text('Buttontext', 'Profile')}></MenuButton>
-  );
+  return <MenuButton onClick={action('clicked')}>{text('Buttontext', 'Profile')}</MenuButton>;
 }
 
 export function Statistics() {
   return (
     <MainOverview
-      productCount={number('Product Count', '123')}
-      totalRefCount={number('Total Referrals', '213')}
-      refsLastWeek={number('Refs Last 7 Days', 239)}
+      count={number('Product Count', '123')}
+      referralsCount={number('Total Referrals', '213')}
     ></MainOverview>
   );
 }

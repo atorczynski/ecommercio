@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import { css } from '@emotion/core';
+import PropTypes from 'prop-types';
 
 export const StyledBurger = styled.button`
   top: 5%;
@@ -66,3 +67,8 @@ export default function BurgerButton(props) {
     </StyledBurger>
   );
 }
+
+BurgerButton.propTypes = {
+  open: PropTypes.bool,
+  onClick: PropTypes.func
+};

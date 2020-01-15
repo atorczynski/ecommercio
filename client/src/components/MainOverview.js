@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled';
+import PropTypes from 'prop-types';
 
 const OverviewWrapper = styled.div`
   display: flex;
@@ -33,3 +34,8 @@ export default function OverView(props) {
     </OverviewWrapper>
   );
 }
+
+OverView.propTypes = {
+  count: PropTypes.number,
+  referralsCount: PropTypes.number
+};

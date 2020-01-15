@@ -10,8 +10,11 @@ export default {
 
 export function InputField() {
   return (
-    <ImportBox onChange={action('change')} placeholder={'http(s)://yourshop.com'}>
-      {text('Input', 'Value')}
-    </ImportBox>
+    <ImportBox
+      onChange={action('change')}
+      placeholder={'http(s)://yourshop.com'}
+      value={text('Input', 'Value')}
+      onClick={action('Submit / Import')}
+    ></ImportBox>
   );
 }
