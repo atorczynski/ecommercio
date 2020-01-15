@@ -16,7 +16,6 @@ export default function Import() {
   function handleImportClick() {
     if (value === '' || !checkIfIsURL(value)) {
       errorNotification('No URL Provided');
-      console.log('hi');
     } else {
       sendURLRequest(value);
       importNotification('Import Started');
