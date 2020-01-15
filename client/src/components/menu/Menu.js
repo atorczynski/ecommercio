@@ -14,7 +14,7 @@ export const StyledMenu = styled.nav`
   text-align: left;
   padding: 2rem;
   position: absolute;
-  opacity: 95%;
+  opacity: 97%;
   top: 0;
   left: 0;
   transform: translateY(${props => (props.open ? '0%' : '-100%')});
@@ -22,6 +22,7 @@ export const StyledMenu = styled.nav`
 
   a {
     font-size: 1rem;
+    color: inherit;
     text-align: center;
     text-transform: uppercase;
     padding: 2rem 0;
@@ -29,6 +30,10 @@ export const StyledMenu = styled.nav`
     letter-spacing: 0.5rem;
     text-decoration: none;
     transition: color 0.3s linear;
+
+    &:hover {
+      color: ${props => props.theme.color.secondary};
+    }
   }
 `;
 

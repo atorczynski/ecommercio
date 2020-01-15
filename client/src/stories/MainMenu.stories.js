@@ -9,10 +9,6 @@ export default {
   decorators: [withKnobs]
 };
 
-export function MainMenuButton() {
-  return <MenuButton onClick={action('clicked')}>{text('Buttontext', 'Profile')}</MenuButton>;
-}
-
 export function Statistics() {
   return (
     <MainOverview
