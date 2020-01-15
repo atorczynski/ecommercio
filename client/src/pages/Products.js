@@ -51,7 +51,7 @@ export default function Products() {
 
   React.useEffect(() => {
     if (products) {
-      const timeoutId = setTimeout(getData, 800);
+      const timeoutId = setTimeout(getData, 1000);
       return () => {
         clearInterval(timeoutId);
       };
@@ -73,9 +73,12 @@ export default function Products() {
           <ProductElement
             key={product._id}
             {...product}
-            onClickDelete={() => {
-              deleteProduct(product._id);
-              getData();
+            onClickDelete={async () => {
+              await deleteProduct(product._id);
+              setTimeout(() => {
+                getData();
+              }, 500);
+
               deleteNotification('Product Deleted');
             }}
             onClickRefresh={() => {
