@@ -1,6 +1,6 @@
 import React from 'react';
-import OverView from '../components/MainOverview';
 import axios from 'axios';
+import OverView from '../components/MainOverview';
 
 function sumByKey(items, key) {
   const sum = items.reduce((prevSum, item) => prevSum + item[key], 0);

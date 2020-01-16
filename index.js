@@ -3,8 +3,10 @@ const express = require('express');
 const mongoose = require('mongoose');
 const path = require('path');
 const morgan = require('morgan');
+
 const app = express();
 const apiRoutes = require('./routes/api');
+
 const port = process.env.PORT || 8080;
 
 app.use(morgan('tiny'));

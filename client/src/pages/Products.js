@@ -1,10 +1,10 @@
 import React from 'react';
+import axios from 'axios';
+import styled from '@emotion/styled';
 import SearchBar from '../components/general/SearchBar';
 import { deleteNotification, refreshNotification } from '../lib/notifications';
 import 'react-toastify/dist/ReactToastify.css';
 import ProductElement from '../components/product/ProductElement';
-import styled from '@emotion/styled';
-import axios from 'axios';
 import { ResizeSpinLoader } from '../components/loader/ResizeSpinLoader';
 
 const InputWrapper = styled.div`

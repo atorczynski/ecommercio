@@ -1,6 +1,6 @@
 import React from 'react';
-import ProductDetail from '../components/product/ProductDetail';
 import axios from 'axios';
+import ProductDetail from '../components/product/ProductDetail';
 import Button from '../components/general/Button';
 
 function incrementRef(id) {
