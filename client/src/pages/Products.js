@@ -78,7 +78,6 @@ export default function Products() {
           onChange={event => setSearch(event.target.value)}
         />
       </InputWrapper>
-      {/* {loading && <PulseLoader css={override} size={15} margin={25} color={'#ED462E'} />} */}
       {loading && <ResizeSpinLoader />}
       {products &&
         products.map(product => (
