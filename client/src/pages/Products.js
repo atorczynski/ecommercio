@@ -1,6 +1,5 @@
 import React from 'react';
 import SearchBar from '../components/general/SearchBar';
-import { css } from '@emotion/core';
 import { deleteNotification, refreshNotification } from '../lib/notifications';
 import 'react-toastify/dist/ReactToastify.css';
 import ProductElement from '../components/product/ProductElement';
