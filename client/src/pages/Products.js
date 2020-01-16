@@ -1,12 +1,11 @@
 import React from 'react';
 import SearchBar from '../components/general/SearchBar';
-import { css } from '@emotion/core';
 import { deleteNotification, refreshNotification } from '../lib/notifications';
 import 'react-toastify/dist/ReactToastify.css';
-import PulseLoader from 'react-spinners/PulseLoader';
 import ProductElement from '../components/product/ProductElement';
 import styled from '@emotion/styled';
 import axios from 'axios';
+import { ResizeSpinLoader } from '../components/loader/ResizeSpinLoader';
 
 const InputWrapper = styled.div`
   display: flex;
@@ -21,10 +20,6 @@ const Wrapper = styled.div`
   justify-content: center;
   align-items: center;
   margin-top: 40px;
-`;
-const override = css`
-  display: block;
-  margin: 100px 0 0 0;
 `;
 
 export default function Products() {
@@ -82,7 +77,7 @@ export default function Products() {
           onChange={event => setSearch(event.target.value)}
         />
       </InputWrapper>
-      {loading && <PulseLoader css={override} size={15} margin={25} color={'#ED462E'} />}
+      {loading && <ResizeSpinLoader />}
       {products &&
         products.map(product => (
           <ProductElement
