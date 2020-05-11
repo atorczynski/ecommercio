@@ -4,7 +4,7 @@
   "description": "ecommercio crawls products from various shopsystems",
   "main": "index.js",
   "devDependencies": {
-    "eslint": "^6.7.2",
+    "eslint": "^7.0.0",
     "eslint-plugin-react": "^7.17.0",
     "nodemon": "^2.0.2",
     "prettier": "^1.19.1"
