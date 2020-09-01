@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 const OverviewWrapper = styled.div`
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: space-around;
   margin-left: 100px;
 `;

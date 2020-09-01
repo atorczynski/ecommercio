@@ -19,10 +19,10 @@ function App() {
         <GlobalStyles />
         <TopBar />
         <Switch>
-          <Route exact path="/">
+          <Route exact path="/login">
             <LoginPage />
           </Route>
-          <Route path="/home">
+          <Route exact path="/">
             <Main />
           </Route>
           <Route path="/import">
