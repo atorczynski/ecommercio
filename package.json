@@ -35,5 +35,6 @@
   "bugs": {
     "url": "https://github.com/atorczynski/ecommercio/issues"
   },
-  "homepage": "https://github.com/atorczynski/ecommercio#readme"
+  "homepage": "https://github.com/atorczynski/ecommercio#readme",
+  "proxy": "localhost:3000"
 }
